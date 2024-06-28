@@ -1,0 +1,53 @@
+
+.education_container{
+    max-width: var(--max-width);
+    margin-inline: auto;
+    height: 100vh;
+}
+.education_container section h2{
+    color: #11a372;
+    padding: 0px 0px 20px 30px;
+}
+.contents{
+    padding: 0px 30px;
+    border-left: 2px solid #bababa;
+}
+.box{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+.box:hover{
+    box-shadow: 0px 3px 12px 0px #ccc;
+    border: 1px solid transparent;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 22px);
+    top: 0;
+    background-color: #11a372;
+    border: 2px solid white;
+}
+.box h4{
+    position: relative;
+    color: #11a372;
+}
+.box h3{
+    font-size: 19px;
+    padding: 10px 0px 6px;
+    font-family: helvetica;
+    color: #444;
+}
+.box p{
+    line-height: 1.2;
+    color: #666;
+    font-size: 17px;
+}
