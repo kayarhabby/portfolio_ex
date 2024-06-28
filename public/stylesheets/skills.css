@@ -1,0 +1,37 @@
+.skills_container{
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+}
+
+.skills_img_container{
+    display: grid;
+    grid-template-rows: repeat(2,300px);
+    grid-template-columns: repeat(4,300px) ;
+    gap: 20px;
+    align-self: center;
+
+}
+
+.skills_content_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg,#ff5757,#8c52ff);
+    border : 5px solid black;
+}
+
+.skills_content_image img {
+    width: 80%;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
+}
+
+.skills_content_image img:hover{
+    transform: translateY(-10px); /* Déplace l'élément vers le haut */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}
