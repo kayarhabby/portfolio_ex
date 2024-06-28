@@ -1,0 +1,41 @@
+.projects_container{
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.cards{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap : 30px;
+    align-self: center;
+}
+
+.cards .card{
+    border: 1px solid transparent;
+    width: 285px;
+    height: 490px;
+}
+
+.cards .card img{
+    width: 285px;
+    height: 375px
+}
+
+.cards .card footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards .card footer img{
+    width: 30px;
+    height: 30px;
+}
+
+
+.btn_see_more {
+    align-self: center;
+}
