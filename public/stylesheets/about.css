@@ -1,0 +1,48 @@
+.about_me {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    height: 100vh;
+    padding-block: 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.about_container {
+    padding-block: 2rem 4rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.about_text_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_text_content p{
+    text-align: justify;
+}
+
+.about_text_content p:first-child{
+    align-self: end;
+    color: var(--third-color);
+    font-size: 50px;
+}
+
+.about_container img{
+    height: 430px;
+    width: 600px;
+}
+
+.about_content{
+    display: flex;
+    flex-direction: column;
+    gap : 50px;
+}
+
+.about_btn{
+    display: flex;
+    justify-content: center;
+    gap : 15rem;
+}
