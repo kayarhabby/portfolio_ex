@@ -2,71 +2,99 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+    />
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="/stylesheets/education.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
 <!--    <h1><%= title %></h1>-->
 <!--    <p>Welcome to <%= title %></p>-->
 
 <!--header navigation start-->
-   <header>
-     <nav class="menu">
-       <ul>
-         <li><a href="#">KAYA RHABBY Pascia Hershe</a></li>
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a></li>
-         <li><a href="#">Skills</a></li>
-         <li><a href="#">Project</a></li>
-         <li><a href="#">Contact</a></li>
-       </ul>
-     </nav>
-   </header>
-<!--header navigation end-->
-
-<!-- home page  start-->
-<div>
-    <section>
-      <h1>Nedd a <span>creatve and stable</span> <span>web solution</span>for your business ? </h1>
-      <small>welcome to my web development portfolio</small>
-      <button>Dowload my resume <img src="/images/arrow.png" alt="down_right_arrow"></button>
-      <div>
-        <p>Suivez-nous!</p>
-        <hr>
-        <a href="#"><img src="/images/facebook.png" alt="facebook image"></a>
-        <a><img src="/images/instagram.png" alt="instagram image"></a>
-        <a href=""><img src="/images/github.png" alt="github image"></a>
-      </div>
-    </section>
-  <div><img src="/images/Lysia.jpeg" alt="Lysia"></div>
-</div>
+<nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#">
+        <span>KAYA RHABBY Pascia Hershe</span>
+      </a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Education</a></li>
+    <li><a href="#">Skills</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<header class="header__container">
+  <div class="header__image">
+    <img src="/images/header.png" alt="header" />
+  </div>
+  <div class="header__content">
+    <h1>
+      Need a <br><span class="h1__span-1">Creative and stable</span> <br>
+      <span class="h1__span-2">Web solution</span><br>
+      for your business?
+    </h1>
+    <p>
+      Welcome <br> to my web development portfolio
+    </p>
+    <div class="header__btn">
+      <button class="btn">Dowload my resume</button>
+    </div>
+    <ul class="socials">
+      <li>
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="ri-youtube-fill"></i></a>
+      </li>
+    </ul>
+  </div>
+</header>
 
 <!--home page end-->
 
 <!-- about me page start-->
-<article>
-  <header class="title">
-    <h2>About Me</h2>
-  </header>
-  <section>
+<article class = "about_me">
+  <h2>About Me</h2>
+  <section class = "about_container">
     <img src="/images/one_piece_luffy_big_mom_shanks_kaido_teach_yonko_by_amanomoon_dcanroz-pre.jpg" alt="one piece image">
-    <div>
-      <p>
-        <span>I'm Sanja</span>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusamus accusantium aperiam consectetur consequatur culpa, deserunt ea et, eum eveniet ipsa,
-        ipsum laboriosam neque nihil non quae quas quisquam sequi sit?
-        A adipisci aliquam atque commodi delectus eaque est in laboriosam laborum libero maiores minima nostrum,
-        numquam perspiciatis possimus provident quae quaerat quam quos sed suscipit unde veritatis.
-        Adipisci, aperiam, expedita!
-        Aliquam at, deserunt, earum est id ipsa maiores modi neque, odio quis ratione sequi sint ullam. Aperiam
-        earum ex harum impedit ipsa omnis optio placeat, quaerat quod unde. Accusantium, porro?
-        Accusamus accusantium culpa natus nihil nostrum perspiciatis porro, repellendus vitae! Ab architecto
-        assumenda commodi corporis culpa earum error explicabo fuga, hic laborum, natus necessitatibus nostrum qui
-        rem saepe soluta vero!
-      </p>
-      <div>
-        <button> Take a look at my skills</button>
-        <button>Let's Talk</button>
+    <div class="about_content">
+      <div class = "about_text_content">
+        <p>I'm Sanja</p><br>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Accusamus accusantium aperiam consectetur consequatur culpa, deserunt ea et, eum eveniet ipsa,
+          ipsum laboriosam neque nihil non quae quas quisquam sequi sit?
+          A adipisci aliquam atque commodi delectus eaque est in laboriosam laborum libero maiores minima nostrum,
+          numquam perspiciatis possimus provident quae quaerat quam quos sed suscipit unde veritatis.
+          Adipisci, aperiam, expedita!
+          Aliquam at, deserunt, earum est id ipsa maiores modi neque, odio quis ratione sequi sint ullam. Aperiam
+          earum ex harum impedit ipsa omnis optio placeat, quaerat quod unde. Accusantium, porro?
+          Accusamus accusantium culpa natus nihil nostrum perspiciatis porro, repellendus vitae! Ab architecto
+          assumenda commodi corporis culpa earum error explicabo fuga, hic laborum, natus necessitatibus nostrum qui
+          rem saepe soluta vero!
+        </p>
+      </div>
+
+      <div class="about_btn">
+        <button class = "btn"> Take a look at my skills</button>
+        <button class = "btn">Let's Talk</button>
       </div>
     </div>
   </section>
@@ -74,14 +102,10 @@
 <!--about me page end-->
 
 <!--education page start-->
-<article class="container">
-  <main class="row">
+<article class="education_container">
     <!--   *******  Education Section Starts  *******   -->
-    <section class="col">
-
-      <header class="title">
-        <h2>EDUCATION</h2>
-      </header>
+    <section>
+      <h2>Education</h2>
 
       <div class="contents">
         <div class="box">
@@ -107,22 +131,6 @@
     </section>
 
     <!--   *******  Education Section Ends  *******   -->
-
-    <!-- Carroussel section start -->
-    <div class="container">
-        <img src="/images/csm_20150630_080835r_566972165c.jpg" alt="ufr mathématique informatique strasbourg image">
-        <img src="/images/inphb.jpg" alt="institut national polytechnique houphouet boigny image">
-        <img src="/images/malgre-les-restrictions-sanitaires-la-plupart-des-etudiants-de-polytech-ont-pu-effectuer-leur-annee-obligatoire-a-l-etranger-photo-er-alexandre-marchi-1615842244.jpg"
-             alt="polytech nancy image">
-
-      <div class="dots">
-        <span onclick="currentSlide(1)"></span>
-        <span onclick="currentSlide(2)"></span>
-        <span onclick="currentSlide(3)"></span>
-      </div>
-    </div>
-    <!--Carroussel section end-->
-  </main>
 </article>
 <!--education page end -->
 
@@ -229,5 +237,10 @@
     Copyright © Kaya Rhabby Pascia Hershe. All Rights Reserved.
   </small>
 </footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/javascripts/landingPage.js"></script>
+<script src="/javascripts/slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
