@@ -3,6 +3,10 @@
     max-width: var(--max-width);
     margin-inline: auto;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 100px;
+    align-items: center;
 }
 .education_container section h2{
     color: #11a372;
@@ -50,4 +54,25 @@
     line-height: 1.2;
     color: #666;
     font-size: 17px;
+}
+
+/*carrousel*/
+.carousel-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;
+    margin: 0 auto;
+}
+.carousel-inner {
+    width: 100%;
+    height: 100%; /* Définir une hauteur fixe pour le carrousel */
+}
+.carousel-item {
+    width: 100%;
+    height: 100%; /* Hauteur de chaque item du carrousel */
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Les images rempliront l'espace défini tout en conservant leur ratio */
 }
