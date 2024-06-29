@@ -1,0 +1,15 @@
+footer{
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 80px;
+}
+footer small{
+    font-weight: bold;
+}
+
+footer p span{
+    font-weight: bold;
+}
