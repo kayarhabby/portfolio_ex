@@ -1,14 +1,12 @@
 .about_me {
     max-width: var(--max-width);
     margin-inline: auto;
-    height: 100vh;
-    padding-block: 3rem 6rem;
     display: flex;
     flex-direction: column;
+    row-gap: 30px;
 
 }
 .about_container {
-    padding-block: 2rem 4rem ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +36,7 @@
 .about_content{
     display: flex;
     flex-direction: column;
-    gap : 50px;
+    column-gap : 50px;
 }
 
 .about_btn{
