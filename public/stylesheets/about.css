@@ -1,4 +1,4 @@
-.about_me {
+main > article {
     max-width: var(--max-width);
     margin-inline: auto;
     display: flex;
@@ -6,40 +6,40 @@
     row-gap: 30px;
 
 }
-.about_container {
+main > article section {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
 }
 
-.about_text_content {
-    display: flex;
-    flex-direction: column;
-}
-
-.about_text_content p{
-    text-align: justify;
-}
-
-.about_text_content p:first-child{
-    align-self: end;
-    color: var(--third-color);
-    font-size: 50px;
-}
-
-.about_container img{
+main > article section img{
     height: 430px;
     width: 600px;
 }
 
-.about_content{
+main > article section > div{
     display: flex;
     flex-direction: column;
     column-gap : 50px;
 }
 
-.about_btn{
+main > article section > div div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+main > article section > div div:first-child p{
+    text-align: justify;
+}
+
+main > article section > div div:first-child p:first-child{
+    align-self: end;
+    color: var(--third-color);
+    font-size: 50px;
+}
+
+main > article section > div div:last-child{
     display: flex;
     justify-content: center;
     gap : 15rem;
