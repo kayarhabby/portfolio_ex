@@ -1,45 +1,44 @@
-main > article {
-    max-width: var(--max-width);
-    margin-inline: auto;
+main > article#about {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    margin-bottom: 50px;
 
 }
-main > article section {
+main > article#about section {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
 }
 
-main > article section img{
+main > article#about section img{
     height: 430px;
     width: 600px;
 }
 
-main > article section > div{
+main > article#about section > div{
     display: flex;
     flex-direction: column;
     column-gap : 50px;
 }
 
-main > article section > div div:first-child {
+main > article#about section > div div.about_content {
     display: flex;
     flex-direction: column;
 }
 
-main > article section > div div:first-child p{
+main > article#about section > div div.about_content p{
     text-align: justify;
 }
 
-main > article section > div div:first-child p:first-child{
+main > article#about section > div div.about_content p:first-child{
     align-self: end;
     color: var(--third-color);
     font-size: 50px;
 }
 
-main > article section > div div:last-child{
+main > article#about section > div div.about_btn_container{
     display: flex;
     justify-content: center;
     gap : 15rem;
