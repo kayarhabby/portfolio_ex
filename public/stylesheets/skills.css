@@ -1,10 +1,8 @@
 .skills_container{
-    max-width: var(--max-width);
-    margin-inline: auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100vh;
+    margin-bottom: 50px;
 }
 
 .skills_img_container{

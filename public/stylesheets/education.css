@@ -1,19 +1,22 @@
+main > article + article#education {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
 
-.education_container{
-    max-width: var(--max-width);
-    margin-inline: auto;
-    height: 100vh;
+main > article + article#education section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap : 100px;
     align-items: center;
 }
-.education_container section h2{
+main > article + article#education h2{
     color: black;
-    padding: 0px 0px 20px 30px;
+    padding: 0 0 20px 0;
 }
-.contents{
-    padding: 0px 30px;
+
+main > article + article#education section div.content {
+    padding: 0 30px;
     border-left: 2px solid #bababa;
 }
 .box{
