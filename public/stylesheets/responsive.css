@@ -1,0 +1,55 @@
+/*media queries start */
+@media only screen and (max-width: 767px) {
+
+    /* header */
+    header > a{
+        display : none;
+    }
+    .menu-hamburger
+    {
+        display: inline-block;
+        position: relative;
+        left : 190px;
+    }
+
+    .menu-hamburger .fa-solid.fa-bars
+    {
+        display: inline-block;
+    }
+
+    .menu-hamburger .fa-x
+    {
+        display : none;
+    }
+
+    header nav {
+        top : 0;
+        left: 0;
+        position: absolute;
+        background-color: rgb(255,255,255,0.20);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(8px);
+        margin-left: -100%;
+        transition : all 0.5s ease;
+    }
+
+    .mobile-menu{
+        margin-left: 0;
+    }
+
+    header nav ul  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    header nav ul li{
+        margin : 25px 0;
+        font-size: 1.2em;
+    }
+}
