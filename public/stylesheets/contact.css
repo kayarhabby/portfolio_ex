@@ -1,10 +1,9 @@
 footer{
-    max-width: var(--max-width);
-    margin-inline: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 80px;
+    background-color: #bababa;
 }
 footer small{
     font-weight: bold;
