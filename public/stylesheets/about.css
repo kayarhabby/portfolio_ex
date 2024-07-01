@@ -6,15 +6,14 @@ main > article#about {
 
 }
 main > article#about section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
 main > article#about section img{
     height: 430px;
-    width: 600px;
+    width: 80%;
 }
 
 main > article#about section > div{
