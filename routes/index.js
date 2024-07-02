@@ -6,4 +6,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET formulaire page. */
+router.get('/formulaire', function(req, res, next) {
+  res.render('formulaire', { title: 'Express' });
+});
+
+router.get('/index', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
