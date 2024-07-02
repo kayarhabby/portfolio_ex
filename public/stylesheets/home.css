@@ -1,16 +1,22 @@
-article#home {
-    max-width: var(--max-width);
-    margin-inline: auto;
+article#home div.homeContainer{
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
-
+}
+article#home {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/bg4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 article#home img {
     width: 100%;
     max-width: 500px;
-    margin-inline: auto;
 }
 
 article#home > div h1 {
