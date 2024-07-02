@@ -7,7 +7,7 @@ main > article + article#education {
 main > article + article#education section{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap : 100px;
+    column-gap : 50px;
     align-items: center;
 }
 main > article + article#education h2{
