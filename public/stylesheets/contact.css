@@ -3,12 +3,23 @@ footer{
     justify-content: center;
     align-items: center;
     column-gap: 80px;
-    background-color: #bababa;
+    background-color: #212429;
+    padding-top: 30px;
 }
 footer small{
     font-weight: bold;
+    color : white;
+}
+
+footer p{
+    color: #d1d5db;
+}
+
+footer h2{
+    color: white;
 }
 
 footer p span{
     font-weight: bold;
+    color: #d1d5db;
 }
