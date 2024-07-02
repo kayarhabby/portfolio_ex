@@ -61,10 +61,17 @@ header nav ul{
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
+  transition: all 0.4s;
 }
 
 header nav ul li{
   list-style: none;
+  padding: 20px;
+}
+
+header nav ul li:hover{
+  border-bottom: 2px solid var(--primary-color);
+
 }
 
 header nav ul li a{
@@ -76,9 +83,9 @@ header nav ul li a{
   font-size: 1.2rem;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
-}
+/*nav ul li a:hover {*/
+/*  text-decoration: underline;*/
+/*}*/
 
 .menu-hamburger
 {
