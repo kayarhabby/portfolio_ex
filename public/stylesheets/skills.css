@@ -7,8 +7,8 @@
 
 .skills_img_container{
     display: grid;
-    grid-template-rows: repeat(4,1fr);
-    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     align-self: center;
 
@@ -34,4 +34,30 @@
 .skills_content_image img:hover{
     transform: translateY(-10px); /* Déplace l'élément vers le haut */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}
+
+article#skills section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+article#skills section nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /*border-bottom: 1px solid black;*/
+}
+article#skills section nav ul{
+    display: flex;
+    column-gap: 30px;
+    transition: all 0.4s;
+}
+
+article#skills section nav ul li a{
+    color : black;
+}
+
+article#skills section nav ul li:hover{
+    padding: 2px;
+    border-bottom: 2px solid var(--primary-color);
 }
