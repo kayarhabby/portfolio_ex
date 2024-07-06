@@ -1,43 +1,43 @@
-main > article#about {
+article#about {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
     margin-bottom: 50px;
 
 }
-main > article#about section {
+article#about section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-main > article#about section img{
+article#about section img{
     height: 430px;
     width: 80%;
 }
 
-main > article#about section > div{
+article#about section > div{
     display: flex;
     flex-direction: column;
     column-gap : 50px;
 }
 
-main > article#about section > div div.about_content {
+article#about section > div div.about_content {
     display: flex;
     flex-direction: column;
 }
 
-main > article#about section > div div.about_content p{
+article#about section > div div.about_content p{
     text-align: justify;
 }
 
-main > article#about section > div div.about_content p:first-child{
+article#about section > div div.about_content p:first-child{
     align-self: end;
     color: var(--third-color);
     font-size: 50px;
 }
 
-main > article#about section > div div.about_btn_container{
+article#about section > div div.about_btn_container{
     display: flex;
     justify-content: center;
     gap : 15rem;
