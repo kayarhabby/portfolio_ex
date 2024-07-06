@@ -124,7 +124,7 @@
         justify-content: center;
     }
 
-    main > article#about{
+    article#about{
         justify-content: center;
         align-items: center;
         margin-top: 50px;
@@ -132,32 +132,32 @@
         padding-right: 30px;
     }
 
-    main > article#about section{
+    article#about section{
         grid-template-columns: 1fr;
     }
 
-    main > article#about section img{
+    article#about section img{
         width: 100%;
     }
 
-    main > article#about section > div{
+    article#about section > div{
         column-gap: 20px;
     }
 
-    main > article#about section > div div.about_content {
+    article#about section > div div.about_content {
         column-gap: 20px;
     }
 
-    main > article#about section > div div.about_content p:first-child{
+    article#about section > div div.about_content p:first-child{
         align-self: start;
         color: var(--third-color);
         font-size: 50px;
     }
 
-    main > article#about section > div div.about_btn_container{
+    article#about section > div div.about_btn_container{
         gap : 5px;
     }
-    .about_btn_container button:first-child{
+    article#about section > div div.about_btn_container button.btn.first{
         display: none;
     }
 
@@ -172,22 +172,22 @@
         grid-template-columns: repeat(2,1fr);
     }
 
-    main > article + article#education {
+    article#education {
         justify-content: center;
         align-items: center;
         padding-left: 30px;
         padding-right: 30px;
     }
 
-    main > article + article#education section{
+    article#education section{
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    .projects_container{
+    article#projects {
         justify-content: center;
         align-items: center;
     }
-    .cards {
+    article#projects section {
         grid-template-columns: 1fr;
     }
 
@@ -223,7 +223,7 @@
         transition : all 0.5s ease;
     }
 
-    header nav ul  {
+    header nav ul {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -320,7 +320,7 @@
         justify-content: center;
     }
 
-    main > article#about{
+    article#about{
         justify-content: center;
         align-items: center;
         margin-top: 50px;
@@ -328,29 +328,29 @@
         padding-right: 30px;
     }
 
-    main > article#about section{
+    article#about section{
         grid-template-columns: 1fr;
     }
 
-    main > article#about section img{
+    article#about section img{
         width: 100%;
     }
 
-    main > article#about section > div{
+    article#about section > div{
         column-gap: 20px;
     }
 
-    main > article#about section > div div.about_content {
+    article#about section > div div.about_content {
         column-gap: 20px;
     }
 
-    main > article#about section > div div.about_content p:first-child{
+    article#about section > div div.about_content p:first-child{
         align-self: start;
         color: var(--third-color);
         font-size: 50px;
     }
 
-    main > article#about section > div div.about_btn_container{
+    article#about section > div div.about_btn_container{
         column-gap : 100px;
     }
 
@@ -365,24 +365,24 @@
         grid-template-columns: repeat(2,1fr);
     }
 
-    main > article + article#education {
+    article#education {
         justify-content: center;
         align-items: center;
         padding-left: 30px;
         padding-right: 30px;
     }
 
-    main > article + article#education section{
+    article#education section{
         grid-template-columns: 1fr;
         gap: 50px;
     }
 
-    .projects_container{
+    article#projects {
         justify-content: center;
         align-items: center;
     }
 
-    .cards {
+    article#projects section {
         grid-template-columns: 1fr 1fr;
     }
 
