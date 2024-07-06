@@ -4,6 +4,27 @@
     row-gap: 30px;
 }
 
+article#projects nav{
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+article#projects nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    transition: all 0.4s;
+}
+
+article#projects nav ul li a{
+    color : black;
+}
+
+article#projects nav ul li a:hover {
+    color: var(--primary-color);
+}
+
 .cards{
     display: grid;
     grid-template-rows: auto;
