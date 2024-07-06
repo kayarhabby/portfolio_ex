@@ -1,7 +1,7 @@
 .skills_container{
     display: flex;
     flex-direction: column;
-    column-gap: 30px;
+    row-gap: 30px;
     margin-bottom: 50px;
 }
 
@@ -36,27 +36,22 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
 }
 
-article#skills section {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-article#skills section nav{
-    display: flex;
-    justify-content: center;
+article#skills nav{
     width: 100%;
     border-bottom: 1px solid black;
 }
-article#skills section nav ul{
+article#skills nav ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
     column-gap: 30px;
     transition: all 0.4s;
 }
 
-article#skills section nav ul li a{
+article#skills nav ul li a{
     color : black;
 }
 
-article#skills section nav ul li a:hover {
+article#skills nav ul li a:hover {
     color: var(--primary-color);
 }
