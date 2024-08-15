@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
             skillDiv.classList.add("skills_content_image");
 
             const img = document.createElement("img");
-            img.src = skill.image;
-            img.alt = `${skill.titre} image`;
+            img.src = './public/images/' + skill.image;
+            img.alt = `${skill.title} image`;
 
             const p = document.createElement("p");
-            p.textContent = skill.titre;
+            p.textContent = skill.title;
 
             skillDiv.appendChild(img);
             skillDiv.appendChild(p);
