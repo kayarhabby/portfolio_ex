@@ -1,7 +1,7 @@
 import express from 'express';
 import pool from './db.js';
 
-const router = express.Router();
+var router = express.Router();
 
 router.get('/skills', async (req, res) => {
     try {
