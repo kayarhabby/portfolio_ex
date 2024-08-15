@@ -7,7 +7,7 @@ import createError from 'http-errors';
 import projectsRouter from './routes/projects.js';
 import skillsRouter from './routes/skills.js';
 import usersRouter from './routes/users.js';
-import bootcampRouter from './routes/bootcamp.js';
+import bootcampRouter from './routes/bootcamps.js';
 
 const app = express();
 
