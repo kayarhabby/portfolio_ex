@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/users', async (req, res) => {
   try {
-    const result = await pool.query('SELECT id, email FROM users');
+    const result = await pool.query('SELECT id, email FROM user');
     res.status(200).json(result.rows);
   } catch (err) {
     console.error(err);
@@ -16,7 +16,7 @@ router.post('/users', async (req, res) => {
   const { email, password } = req.body;
   try {
     const result = await pool.query(
-        'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *',
+        'INSERT INTO user (email, password) VALUES ($1, $2) RETURNING *',
         [email, password]
     );
     res.status(201).json(result.rows[0]);
@@ -32,7 +32,7 @@ router.put('/users/:id', async (req, res) => {
   const { email, password } = req.body;
   try {
     const result = await pool.query(
-        'UPDATE users SET email = $1, password = $2 WHERE id = $3 RETURNING *',
+        'UPDATE user SET email = $1, password = $2 WHERE id = $3 RETURNING *',
         [email, password, id]
     );
     if (result.rowCount === 0) {
@@ -48,7 +48,7 @@ router.put('/users/:id', async (req, res) => {
 router.delete('/users/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await pool.query('DELETE FROM users WHERE id = $1 RETURNING *', [id]);
+    const result = await pool.query('DELETE FROM user WHERE id = $1 RETURNING *', [id]);
     if (result.rowCount === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
