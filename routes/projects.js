@@ -13,10 +13,10 @@ router.get('/projects', async (req, res) => {
     }
 });
 
-router.get('/project/:category', async (req, res) => {
+router.get('/projects/:category', async (req, res) => {
     const category = req.params.category;
     try {
-        const result = await pool.query('SELECT title, link, image, category FROM projects WHERE categorie = $1', [category]);
+        const result = await pool.query('SELECT title, link, image, category FROM project WHERE categorie = $1', [category]);
         res.status(200).json(result.rows);
     } catch (err) {
         console.log(err);
