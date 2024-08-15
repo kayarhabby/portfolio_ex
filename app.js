@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import createError from 'http-errors';
 
+import pool from './routes/db.js';
+import indexRouter from './routes/index.js';
 import projectsRouter from './routes/projects.js';
 import skillsRouter from './routes/skills.js';
 import usersRouter from './routes/users.js';
@@ -43,4 +45,11 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+// Fermer le pool lors de la fermeture de l'application
+process.on('SIGINT', () => {
+  pool.end(() => {
+    console.log('Pool has ended');
+    process.exit(0);
+  });
+});
 export default app;
