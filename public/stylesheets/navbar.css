@@ -6,9 +6,28 @@
   --text-light: #d1d5db;
   --white: #ffffff;
   --black: #000000;
-  --max-width: 1560px;
+  --max-width: 1280px;
   --success-color: #23cc71;
   --error-color: #e74c3c;
+
+  /* Effets */
+  --transition-duration: 0.3s; /* Durée de transition générale */
+  --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre portée au survol */
+
+  /* Espacements */
+  --gap-small: 10px;
+  --gap-medium: 20px;
+  --gap-large: 30px;
+  --gap-xlarge: 70px;
+
+  /* Bordures et Rayons */
+  --border-radius-small: 5px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 10%; /* Pourcentage utilisé pour des formes spécifiques */
+  --border-radius-circle: 50%; /* Pour les éléments circulaires */
+  --border-radius: 10px; /* Bordure par défaut */
+
+  --overlay-color: rgba(0, 0, 0, 0.5); /* Couleur de l'overlay */
 }
 
 * {
@@ -47,6 +66,7 @@ header nav{
   margin-left: 40px;
   margin-right: 40px;
   width: 100%;
+  max-width: var(--max-width);
 }
 
 header nav > a{
@@ -127,4 +147,9 @@ main{
 .btn:hover {
   color: var(--primary-color);
   background-color: var(--white);
+}
+
+.lang_and_button {
+  display: flex;
+  gap: 30px;
 }
