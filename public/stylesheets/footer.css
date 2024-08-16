@@ -1,0 +1,178 @@
+/* Section "Compétences" */
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-large); /* Utilisation de la variable pour l'espacement */
+    height: auto;
+    background-color: var(--secondary-color); /* Couleur de fond du footer */
+    color: var(--text-light); /* Couleur du texte */
+}
+
+.footer_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    padding: var(--gap-medium); /* Utilisation de la variable pour le padding */
+    max-width: var(--max-width); /* Largeur maximale du contenu */
+    gap: var(--gap-large); /* Espacement entre les éléments */
+}
+
+.footer_content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: var(--font-size-huge); /* Taille de police */
+    color: var(--text-light); /* Couleur du texte */
+    margin-right: 50px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-medium); /* Espacement entre les éléments */
+}
+
+.links h3 {
+    margin: 0;
+}
+
+.links ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-small); /* Espacement entre les éléments de liste */
+}
+
+.links ul li {
+    margin: 0;
+}
+
+.links ul li a:hover {
+    color: var(--primary-color); /* Couleur au survol */
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium); /* Espacement entre les éléments */
+}
+
+.contact h3 {
+    margin: 0;
+}
+
+.contact ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-small); /* Espacement entre les éléments de liste */
+}
+
+.contact ul li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    column-gap: var(--gap-small); /* Espacement entre les éléments de liste */
+}
+
+.contact ul li div.cercle_img {
+    width: var(--icon-size-medium); /* Taille du cercle */
+    height: var(--icon-size-medium);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.contact ul li img {
+    width: var(--icon-size-small); /* Taille des icônes */
+    height: var(--icon-size-small);
+}
+
+.contact ul li:first-child img {
+    width: var(--icon-size-medium); /* Taille spécifique pour le premier enfant */
+    height: var(--icon-size-medium);
+}
+
+.contact ul li a {
+    margin: 0;
+}
+
+.contact ul li a:hover {
+    color: #e74c3c; /* Couleur au survol */
+}
+
+.mailMe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact button {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: var(--btn-padding); /* Utilisation de la variable pour le padding */
+    column-gap: var(--gap-small); /* Espacement entre les éléments du bouton */
+    gap: var(--gap-small);
+}
+
+.footer_container a {
+    color: var(--text-light); /* Couleur des liens */
+}
+
+.footer_container section:not(.footer_content) {
+    border-top: 1px solid var(--border-color); /* Couleur de la bordure */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: var(--gap-small); /* Utilisation de la variable pour le padding */
+}
+
+.mailMe button {
+    display: flex;
+    align-items: center;
+    padding: var(--btn-padding); /* Utilisation de la variable pour le padding */
+    width: 180px;
+    gap: var(--gap-small);
+}
+
+.cercle_img {
+    height: var(--circle-diameter);
+    width: var(--circle-diameter);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-circle);
+    position: relative;
+    z-index: 2;
+    margin: var(--gap-medium); /* Ajout d'un margin pour espacer le cercle des autres éléments */
+}
+
+/* Pour les écrans de 768px de large ou moins */
+@media (max-width: 767px) {
+
+    /* Section "Compétences" : Passer d'une grille à deux colonnes à une seule colonne */
+    .footer_content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Media Queries pour adapter le site à différentes tailles d'écran */
+/* Pour les écrans de 1024px de large ou moins */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--gap-xlarge);
+    }
+
+    .name {
+        justify-content: start;
+    }
+}
