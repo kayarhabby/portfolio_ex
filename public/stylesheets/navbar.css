@@ -9,6 +9,7 @@
   --max-width: 1280px;
   --success-color: #23cc71;
   --error-color: #e74c3c;
+  --border-color: #718096; /* Couleur de la bordure */
 
   /* Effets */
   --transition-duration: 0.3s; /* Durée de transition générale */
@@ -28,6 +29,34 @@
   --border-radius: 10px; /* Bordure par défaut */
 
   --overlay-color: rgba(0, 0, 0, 0.5); /* Couleur de l'overlay */
+
+  /* Tailles de police */
+  --font-size-small: 16px;
+  --font-size-medium: 18px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 24px;
+  --font-size-xxlarge: 32px;
+  --font-size-huge: 42px;
+  --font-size-quote: 18px; /* Taille de la police pour les citations */
+  --font-size-author: 16px; /* Taille de la police pour les auteurs des citations */
+
+  /* Bouton */
+  --btn-width: 200px;
+  --btn-padding: 10px;
+  --btn-bg-color: forestgreen;
+  --btn-hover-bg-color: darkgreen;
+
+  /* Tailles des icônes */
+  --icon-size-small: 20px;
+  --icon-size-medium: 30px;
+  --icon-size-large: 50px;
+  --icon-size: 24px; /* Taille par défaut des icônes */
+
+  /* Tailles d'éléments spécifiques */
+  --circle-diameter: 200px; /* Diamètre pour les éléments circulaires */
+
+  /* Header */
+  --header-height: 70vh; /* Hauteur du header */
 }
 
 * {
