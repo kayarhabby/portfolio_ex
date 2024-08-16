@@ -20,8 +20,4 @@ router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', { title: 'Express' });
 });
 
-router.get('/projectDesc', function(req, res, next) {
-  res.render('projectDesc', { title: 'Express' });
-});
-
 export default router;
