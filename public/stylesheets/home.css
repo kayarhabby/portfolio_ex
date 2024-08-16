@@ -41,18 +41,3 @@ article#home > div h1 p {
     margin-bottom: 2rem;
     color: var(--black);
 }
-
-article#home div ul {
-    padding: 2rem 0 4rem 0;
-    display: flex;
-    gap: 1rem;
-}
-
-article#home div ul a {
-    font-size: 1.5rem;
-    color: var(--black);
-}
-
-article#home div ul a:hover {
-    color: var(--primary-color);
-}
