@@ -1,25 +1,79 @@
-footer{
+#contact {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 80px;
-    background-color: #212429;
-    padding-top: 30px;
-}
-footer small{
-    font-weight: bold;
-    color : white;
+    margin-bottom: 30px;
 }
 
-footer p{
-    color: #d1d5db;
+.contact-section {
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-large);
 }
 
-footer h2{
-    color: white;
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-large);
 }
 
-footer p span{
-    font-weight: bold;
-    color: #d1d5db;
+.map-and-info {
+    width: 100%;
+    grid-column: span 2;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    margin: 0;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.contact-info section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+}
+
+/* Pour les écrans de 768px de large ou moins */
+@media (max-width: 767px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px de large */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-info section {
+        flex-direction: row;
+        gap: var(--gap-small);
+    }
+
+    #contact {
+        margin-right: var(--gap-small);
+        margin-left: var(--gap-small);
+    }
 }
