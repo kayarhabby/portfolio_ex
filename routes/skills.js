@@ -15,8 +15,9 @@ router.get('/skills', async (req, res) => {
 
 router.get('/skills/:category', async (req, res) => {
     const category = req.params.category;
+    console.log(category);
     try {
-        const result = await pool.query('SELECT title, image, category FROM skill WHERE categorie = $1', [category]);
+        const result = await pool.query('SELECT title, image, category FROM skill WHERE category = $1', [category]);
         res.status(200).json(result.rows);
     } catch (err) {
         console.log(err);
