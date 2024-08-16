@@ -150,6 +150,11 @@ main{
   padding-bottom: 30px;
   max-width: var(--max-width);
   margin-inline: auto;
+  margin-bottom: 100px;
+  margin-top : 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 100px;
 }
 
 .btn {

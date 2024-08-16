@@ -2,8 +2,6 @@ article#about {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-    margin-bottom: 50px;
-
 }
 article#about section {
     display: grid;
