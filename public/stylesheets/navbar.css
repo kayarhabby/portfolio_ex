@@ -1,19 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
 :root {
   --primary-color: #ff0147;
   --secondary-color: #212429;
-  --third-color: #5E17EB;
+  --third-color: #5e17eb;
   --text-light: #d1d5db;
   --white: #ffffff;
   --black: #000000;
   --max-width: 1280px;
   --success-color: #23cc71;
   --error-color: #e74c3c;
-  --border-color: #718096; /* Couleur de la bordure */
+  --border-color: #718096;
 
   /* Effets */
-  --transition-duration: 0.3s; /* Durée de transition générale */
-  --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre portée au survol */
+  --transition-duration: 0.3s;
+  --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
 
   /* Espacements */
   --gap-small: 10px;
@@ -24,11 +25,11 @@
   /* Bordures et Rayons */
   --border-radius-small: 5px;
   --border-radius-medium: 8px;
-  --border-radius-large: 10%; /* Pourcentage utilisé pour des formes spécifiques */
-  --border-radius-circle: 50%; /* Pour les éléments circulaires */
-  --border-radius: 10px; /* Bordure par défaut */
+  --border-radius-large: 10%;
+  --border-radius-circle: 50%;
+  --border-radius: 10px;
 
-  --overlay-color: rgba(0, 0, 0, 0.5); /* Couleur de l'overlay */
+  --overlay-color: rgba(0, 0, 0, 0.5);
 
   /* Tailles de police */
   --font-size-small: 16px;
@@ -37,8 +38,8 @@
   --font-size-xlarge: 24px;
   --font-size-xxlarge: 32px;
   --font-size-huge: 42px;
-  --font-size-quote: 18px; /* Taille de la police pour les citations */
-  --font-size-author: 16px; /* Taille de la police pour les auteurs des citations */
+  --font-size-quote: 18px;
+  --font-size-author: 16px;
 
   /* Bouton */
   --btn-width: 200px;
@@ -50,13 +51,13 @@
   --icon-size-small: 20px;
   --icon-size-medium: 30px;
   --icon-size-large: 50px;
-  --icon-size: 24px; /* Taille par défaut des icônes */
+  --icon-size: 24px;
 
   /* Tailles d'éléments spécifiques */
-  --circle-diameter: 200px; /* Diamètre pour les éléments circulaires */
+  --circle-diameter: 200px;
 
   /* Header */
-  --header-height: 70vh; /* Hauteur du header */
+  --header-height: 70vh;
 }
 
 * {
@@ -80,16 +81,19 @@ body {
   height: 100vh;
 }
 
-header{
+header {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.6s;
   padding: 20px;
-  background-color: #212429;
+  background-color: var(--secondary-color);
+  position: sticky; /* Rend le header sticky */
+  top: 0;
+  z-index: 1000;
 }
 
-header nav{
+header nav {
   display: flex;
   justify-content: space-between;
   margin-left: 40px;
@@ -98,16 +102,16 @@ header nav{
   max-width: var(--max-width);
 }
 
-header nav .logo a{
+header nav .logo a {
   font-weight: 600;
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-size: 1.5rem;
   letter-spacing: 1px;
   transition: 0.6s;
 }
 
-header nav ul{
+header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,43 +119,46 @@ header nav ul{
   transition: all 0.4s;
 }
 
-header nav ul li{
+header nav ul li {
   list-style: none;
 }
 
-header nav ul li a{
-  margin : 0 15px;
+header nav ul li a {
+  margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   letter-spacing: 1px;
   font-weight: 600;
   font-size: 1.2rem;
+  transition: color 0.3s;
 }
 
-.menu-hamburger
-{
+header nav ul li a.active {
+  color: var(--primary-color); /* Surligne le lien actif en orange */
+}
+
+.menu-hamburger {
   display: none;
-  justify-content: space-between ;
+  justify-content: space-between;
   align-items: center;
-  color : #fff;
-  width : 60px;
-  height : 60px;
+  color: var(--white);
+  width: 60px;
+  height: 60px;
 }
 
-.menu-hamburger a
-{
-  color: #fff;
+.menu-hamburger a {
+  color: var(--white);
   font-size: 2em;
   margin: 0;
 }
 
-main{
+main {
   padding-top: 30px;
   padding-bottom: 30px;
   max-width: var(--max-width);
   margin-inline: auto;
   margin-bottom: 100px;
-  margin-top : 100px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   row-gap: 100px;
