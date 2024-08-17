@@ -9,7 +9,7 @@ article#about > h2 {
 }
 article#about section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
     gap: 30px;
 }
 
@@ -32,12 +32,6 @@ article#about section > div div.about_content {
 article#about section > div div.about_content p{
     text-align: justify;
     margin-bottom: 0;
-}
-
-article#about section > div div.about_content p:first-child{
-    align-self: end;
-    color: var(--third-color);
-    font-size: 2rem;
 }
 
 article#about section > div div.about_btn_container{
