@@ -1,44 +1,44 @@
 <footer class="footer_container">
     <section class="footer_content">
         <div class="name">
-            <span>Pascia Hershe</span>
+            <span><%= t('name', { ns: 'footer' }) %></span>
         </div>
         <div class="links">
-            <h3>Links</h3>
+            <h3><%= t('links_title', { ns: 'footer' }) %></h3>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><%= t('home', { ns: 'footer' }) %></a></li>
+                <li><a href="#about"><%= t('about', { ns: 'footer' }) %></a></li>
+                <li><a href="#education"><%= t('education', { ns: 'footer' }) %></a></li>
+                <li><a href="#skills"><%= t('skills', { ns: 'footer' }) %></a></li>
+                <li><a href="#contact"><%= t('contact', { ns: 'footer' }) %></a></li>
             </ul>
         </div>
         <div class="contact">
-            <h3>Contact</h3>
+            <h3><%= t('contact_title', { ns: 'footer' }) %></h3>
             <ul>
                 <li>
                     <div class="cercle_img">
                         <i class="fa fa-map-marker"></i>
                     </div>
-                    <a href="#">Rue jean Lamour Vandoeuvre-lès-Nancy 54500</a>
+                    <a href="#"><%= t('address', { ns: 'footer' }) %></a>
                 </li>
                 <li>
                     <div class="cercle_img">
                         <i class="fa fa-phone"></i>
                     </div>
-                    <a href="#">07 49 49 62 87</a>
+                    <a href="#"><%= t('phone', { ns: 'footer' }) %></a>
                 </li>
                 <li>
                     <div class="cercle_img">
                         <i class="fa fa-envelope"></i>
                     </div>
-                    <a href="#">pasciahershekaya@gmail.com</a>
+                    <a href="#"><%= t('email', { ns: 'footer' }) %></a>
                 </li>
             </ul>
             <div class="header__btn">
                 <a href="/documents/KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf" download="KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf">
                     <button class="btn">
-                        Dowload my resume
+                        <%= t('download_resume', { ns: 'footer' }) %>
                         <i class="fa fa-download"></i>
                     </button>
                 </a>
@@ -48,7 +48,7 @@
         <div class="mailMe">
             <a href="#">
                 <button class="btn">
-                    envoyer un mail
+                    <%= t('send_email', { ns: 'footer' }) %>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </a>
@@ -56,8 +56,7 @@
     </section>
     <section>
         <div class="copyright">
-            <p>Copyright © 2024 Portfolio. Tous droits réservés</p>
+            <p><%= t('copyright', { ns: 'footer' }) %></p>
         </div>
     </section>
 </footer>
-

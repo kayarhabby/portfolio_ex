@@ -1,6 +1,6 @@
 <article id="contact">
     <section class="contact-section">
-        <h2>Contact</h2>
+        <h2><%= t('contact_title', { ns: 'contact' }) %></h2>
         <div class="contact-container">
             <div class="map-and-info">
                 <iframe
@@ -15,16 +15,16 @@
                 ></iframe>
             </div>
             <div class="contact-info">
-                <h3>Adresse</h3>
+                <h3><%= t('address_title', { ns: 'contact' }) %></h3>
                 <section>
                     <p>
-                        <i class="fa fa-map-marker"></i> Rue Jean Lamour 54500 Vandoeuvre-lès-Nancy
+                        <i class="fa fa-map-marker"></i> <%= t('address', { ns: 'contact' }) %>
                     </p>
                     <p>
-                        <i class="fa fa-phone"></i> contact: (+242) 06 470 07 54
+                        <i class="fa fa-phone"></i> <%= t('phone', { ns: 'contact' }) %>
                     </p>
                     <p>
-                        <i class="fa fa-envelope"></i> email: raellekissangou@gmail.com
+                        <i class="fa fa-envelope"></i> <%= t('email', { ns: 'contact' }) %>
                     </p>
                 </section>
             </div>

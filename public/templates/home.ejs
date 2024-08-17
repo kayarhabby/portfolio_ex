@@ -1,22 +1,21 @@
-
 <article id="home">
     <div class="homeContainer">
         <div>
             <h1>
-                Need a
+                <%= t('need_a', { ns: 'home' }) %>
                 <br>
-                <span class="h1__span-1">Creative and stable</span>
+                <span class="h1__span-1"><%= t('creative_and_stable', { ns: 'home' }) %></span>
                 <br>
-                <span class="h1__span-2">Web solution</span><br>
-                for your business?
+                <span class="h1__span-2"><%= t('web_solution', { ns: 'home' }) %></span><br>
+                <%= t('for_your_business', { ns: 'home' }) %>
             </h1>
             <p>
-                Welcome to my web development portfolio
+                <%= t('welcome_message', { ns: 'home' }) %>
             </p>
             <div class="header__btn">
                 <a href="/documents/KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf" download="KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf">
                     <button class="btn">
-                        Dowload my resume
+                        <%= t('download_resume', { ns: 'home' }) %>
                         <i class="fa fa-download"></i>
                     </button>
                 </a>
@@ -26,5 +25,4 @@
             <img src="/images/Rhabi_1.jpg" alt="header" />
         </div>
     </div>
-
 </article>

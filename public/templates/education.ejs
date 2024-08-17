@@ -1,26 +1,16 @@
-<!--education.ejs page start-->
+<!-- education.ejs page start -->
 <article id="education">
     <!--   *******  Education Section Starts  *******   -->
-    <h2>Education</h2>
+    <h2><%= t('education_title', { ns: 'education' }) %></h2>
     <section>
         <div class="content">
-            <div class="box">
-                <h4>2018 - 2022</h4>
-                <h3>Polytech Nancy, Université de Lorraine</h3>
-                <p>Cycle d'ingénieur, option Sciences et Technologie de l'information</p>
-            </div>
-
-            <div class="box">
-                <h4>2021 - 2023</h4>
-                <h3>UFR de Mathématique et Informatique, Strasbourg</h3>
-                <p>DEUG de Sciences, technologies, santé Mention Informatique</p>
-            </div>
-
-            <div class="box">
-                <h4>2020 - 2021</h4>
-                <h3>Institut National Houphouët Boigny, Yamoussoukro, côte d'ivoire</h3>
-                <p>Technicien Supérieur en Agronomie, première année</p>
-            </div>
+            <% t('education_entries', { ns: 'education' }).forEach(entry => { %>
+                <div class="box">
+                    <h4><%= entry.period %></h4>
+                    <h3><%= entry.institution %></h3>
+                    <p><%= entry.details %></p>
+                </div>
+            <% }) %>
         </div>
 
         <div id="carouselExampleCaptions" class="carousel slide carousel-container" data-bs-ride="carousel">
@@ -52,4 +42,4 @@
     </section>
     <!--   *******  Education Section Ends  *******   -->
 </article>
-<!--education.ejs page end -->
+<!-- education.ejs page end -->
