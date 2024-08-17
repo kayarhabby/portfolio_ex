@@ -27,25 +27,28 @@ i18next
     .init({
         fallbackLng: 'en', // Langue de secours si la langue demandée n'est pas disponible
         preload: ['en', 'fr'], // Langues à précharger
-        ns: ['navbar'], // Espaces de noms pour les fichiers de traduction (ex: 'navbar' pour les traductions de la barre de navigation)
+        ns: ['navbar', 'home', 'about', 'education', 'skills', 'projects', 'contact', 'footer'], // Espaces de noms pour les fichiers de traduction (ex: 'navbar' pour les traductions de la barre de navigation)
+        defaultNS: 'navbar',
         backend: {
             loadPath: path.join(path.dirname(new URL(import.meta.url).pathname), '/public/locales/{{lng}}/{{ns}}.json') // Chemin vers les fichiers de traduction
         },
         cache: {
-            enabled: true, // Activer le cache
-            get: (lng, ns, cb) => {
-                const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
-                memcachedClient.get(key, (err, data) => {
-                    if (err) return cb(err, null); // Gestion des erreurs
-                    return cb(null, data ? JSON.parse(data) : null); // Récupération des données du cache
-                });
-            },
-            set: (lng, ns, data) => {
-                const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
-                memcachedClient.set(key, JSON.stringify(data), 24 * 60 * 60, (err) => {
-                    if (err) console.error('Memcached set error:', err); // Gestion des erreurs
-                });
-            }
+            enabled: false, // Activer le cache
+            // get: (lng, ns, cb) => {
+            //     const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
+            //     memcachedClient.get(key, (err, data) => {
+            //         if (err) return cb(err, null); // Gestion des erreurs
+            //         return cb(null, data ? JSON.parse(data) : null); // Récupération des données du cache
+            //     });
+            // },
+            // set: (lng, ns, data) => {
+            //     const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
+            //     memcachedClient.set(key, JSON.stringify(data), 24 * 60 * 60, (err) => {
+            //         if (err) console.error('Memcached set error:', err); // Gestion des erreurs
+            //     });
+            // }
+
+
         }
     });
 
