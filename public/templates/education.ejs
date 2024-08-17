@@ -1,16 +1,26 @@
-<!-- education.ejs page start -->
+<!--education.ejs page start-->
 <article id="education">
     <!--   *******  Education Section Starts  *******   -->
     <h2><%= t('education_title', { ns: 'education' }) %></h2>
     <section>
         <div class="content">
-            <% t('education_entries', { ns: 'education' }).forEach(entry => { %>
-                <div class="box">
-                    <h4><%= entry.period %></h4>
-                    <h3><%= entry.institution %></h3>
-                    <p><%= entry.details %></p>
-                </div>
-            <% }) %>
+            <div class="box">
+                <h4><%= t('period1', { ns: 'education' }) %></h4>
+                <h3><%= t('institution1', { ns: 'education' }) %></h3>
+                <p><%= t('detail1', { ns: 'education' }) %></p>
+            </div>
+
+            <div class="box">
+                <h4><%= t('period2', { ns: 'education' }) %></h4>
+                <h3><%= t('institution2', { ns: 'education' }) %></h3>
+                <p><%= t('detail2', { ns: 'education' }) %></p>
+            </div>
+
+            <div class="box">
+                <h4><%= t('period3', { ns: 'education' }) %></h4>
+                <h3><%= t('institution3', { ns: 'education' }) %></h3>
+                <p><%= t('detail3', { ns: 'education' }) %></p>
+            </div>
         </div>
 
         <div id="carouselExampleCaptions" class="carousel slide carousel-container" data-bs-ride="carousel">
@@ -21,13 +31,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/images/polytech_nancy.png" class="d-block w-100" alt="polytech nancy image">
+                    <img src="/images/polytech_nancy.png" class="d-block w-100" alt="<%= t('institution1', { ns: 'education' }) %>">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/strasbourg_university.png" class="d-block w-100" alt="ufr mathématiques informatiques strasbourg">
+                    <img src="/images/strasbourg_university.png" class="d-block w-100" alt="<%= t('institution2', { ns: 'education' }) %>">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/inphb.jpg" class="d-block w-100" alt="inphb image">
+                    <img src="/images/inphb.jpg" class="d-block w-100" alt="<%= t('institution3', { ns: 'education' }) %>">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -42,4 +52,4 @@
     </section>
     <!--   *******  Education Section Ends  *******   -->
 </article>
-<!-- education.ejs page end -->
+<!--education.ejs page end -->
