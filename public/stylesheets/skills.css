@@ -23,7 +23,7 @@
 }
 
 .skills_content_image:hover{
-    background-color: #000000;
+    background-color: var(--third-color);
     color: white;
 }
 

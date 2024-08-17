@@ -3,6 +3,7 @@ article#projects {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    /*background-color: #DEEFE7;*/
 }
 
 /* Style pour la barre de navigation des projets */
