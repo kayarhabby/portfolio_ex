@@ -1,22 +1,22 @@
 <header>
-    <nav >
+    <nav>
         <div class="logo">
-            <a href="/" >PASCIA HERSHE</a>
+            <a href="/">PASCIA H.</a>
         </div>
         <ul>
-            <li><a href="/index#home">Home</a></li>
-            <li><a href="/index#about">About</a></li>
-            <li><a href="/index#education">Education</a></li>
-            <li><a href="/index#skills">Skills</a></li>
-            <li><a href="/index#projects">Projects</a></li>
-            <li><a href="/index#contact">Contact</a></li>
+            <li><a href="/index#home"><%= t('NAV_HOME') %></a></li>
+            <li><a href="/index#about"><%= t('NAV_ABOUT') %></a></li>
+            <li><a href="/index#education"><%= t('NAV_EDUCATION') %></a></li>
+            <li><a href="/index#skills"><%= t('NAV_SKILLS') %></a></li>
+            <li><a href="/index#projects"><%= t('NAV_PROJECTS') %></a></li>
+            <li><a href="/index#contact"><%= t('NAV_CONTACT') %></a></li>
         </ul>
         <div class="lang_and_button">
-            <select class="form-select">
-                <option selected>English</option>
-                <option value="1">Français</option>
+            <select class="form-select" onchange="changeLanguage(this)">
+                <option value="en" <%= language === 'en' ? 'selected' : '' %>>English</option>
+                <option value="fr" <%= language === 'fr' ? 'selected' : '' %>>Français</option>
             </select>
-            <a href="/formulaire"> <button class="btn">Login</button> </a>
+            <a href="/formulaire"><button class="btn"><%= t('LOGIN_BUTTON') %></button></a>
         </div>
     </nav>
 
