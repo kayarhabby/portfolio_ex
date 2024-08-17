@@ -22,7 +22,7 @@
         transition : all 0.5s ease;
     }
 
-    header nav ul  {
+    header nav ul {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -146,12 +146,6 @@
 
     article#about section > div div.about_content {
         column-gap: 20px;
-    }
-
-    article#about section > div div.about_content p:first-child{
-        align-self: start;
-        color: var(--third-color);
-        font-size: 50px;
     }
 
     article#about section > div div.about_btn_container{
@@ -342,12 +336,6 @@
 
     article#about section > div div.about_content {
         column-gap: 20px;
-    }
-
-    article#about section > div div.about_content p:first-child{
-        align-self: start;
-        color: var(--third-color);
-        font-size: 50px;
     }
 
     article#about section > div div.about_btn_container{
