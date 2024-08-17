@@ -1,0 +1,20 @@
+{
+  "education_title": "Education",
+  "education_entries": [
+    {
+      "period": "2018 - 2022",
+      "institution": "Polytech Nancy, University of Lorraine",
+      "details": "Engineering cycle, option Information Science and Technology"
+    },
+    {
+      "period": "2021 - 2023",
+      "institution": "Faculty of Mathematics and Computer Science, University of Strasbourg",
+      "details": "DEUG of Sciences, Technology, Health with a specialization in Computer Science"
+    },
+    {
+      "period": "2020 - 2021",
+      "institution": "Institut National Houphouët Boigny, Yamoussoukro, Côte d'Ivoire",
+      "details": "Higher Technician in Agronomy, first year"
+    }
+  ]
+}
