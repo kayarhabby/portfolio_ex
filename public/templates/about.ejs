@@ -1,26 +1,17 @@
 <!-- about page start-->
 <article id="about">
-    <h2>About</h2>
+    <h2><%= t('about_title', { ns: 'about' }) %></h2>
     <section>
-        <img src="/images/rhabby.jpg" alt="one piece image" class="grid-item">
+        <img src="/images/rhabby.jpg" alt="rhabby image" class="grid-item">
         <div>
-            <div class = "about_content">
+            <div class="about_content">
                 <p>
-                    Je suis KAYA RHABBY Pascia Hershe, étudiant en ingénierie spécialisé en systèmes et technologies de l'information à
-                    Polytech Nancy. Originaire du Congo, j'ai obtenu un baccalauréat scientifique avant de poursuivre
-                    mes études en informatique à l'Université de Strasbourg, où j'ai décroché un DEUG. Passionné par
-                    l'informatique, j'ai acquis des compétences solides en Python, Java, C/C++, JavaScript. En parallèle, je m'autoforme via des plateformes comme Udemy,
-                    avec des certifications en développement web, cloud computing, et réseaux.
-
-                    En dehors de mes études, je suis un passionné de basket-ball et de danse latine. Ces activités me
-                    permettent de développer des qualités essentielles telles que l'esprit d'équipe et la discipline.
-                    Mon objectif est de me spécialiser dans le développement logiciel et l'ingénierie cloud, avec un
-                    intérêt marqué pour le DevOps.
+                    <%= t('about_text', { ns: 'about' }) %>
                 </p>
             </div>
             <div class="about_btn_container">
-                <a href="#skills"><button class ="btn first"> Take a look at my skills</button></a>
-                <a href="#contact"><button class ="btn">Let's Talk</button></a>
+                <a href="#skills"><button class="btn first"><%= t('take_a_look_btn', { ns: 'about' }) %></button></a>
+                <a href="#contact"><button class="btn"><%= t('lets_talk_btn',{ ns: 'about' }) %></button></a>
             </div>
         </div>
     </section>
