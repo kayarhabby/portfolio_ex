@@ -39,12 +39,12 @@ article#education section div.content {
     border-radius: 50%;
     right: calc(100% + 22px);
     top: 0;
-    background-color: #11a372;
+    background-color: #ff0147;
     border: 2px solid white;
 }
 .box h4{
     position: relative;
-    color: #11a372;
+    color: #000000;
 }
 .box h3{
     font-size: 19px;
