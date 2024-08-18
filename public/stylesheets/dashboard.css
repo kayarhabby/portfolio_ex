@@ -1,0 +1,25 @@
+.appDashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.dashboardItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.dashboardTab{
+    width: 100%;
+    max-width: var(--max-width);
+}
