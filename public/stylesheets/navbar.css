@@ -111,6 +111,10 @@ header nav .logo a {
   transition: 0.6s;
 }
 
+header nav .logo a:hover {
+  color : var(--third-color);
+}
+
 header nav ul {
   display: flex;
   justify-content: center;
@@ -131,6 +135,10 @@ header nav ul li a {
   font-weight: 600;
   font-size: 1.2rem;
   transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: var(--third-color);
 }
 
 header nav ul li a.active {
