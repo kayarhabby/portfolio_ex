@@ -3,6 +3,7 @@ import pool from './db.js';
 
 var router = express.Router();
 
+// Route pour obtenir tous les projets
 router.get('/projects', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM project');
@@ -13,6 +14,7 @@ router.get('/projects', async (req, res) => {
     }
 });
 
+// Route pour obtenir les projets par catégorie
 router.get('/projects/:category', async (req, res) => {
     const category = req.params.category;
     try {
@@ -20,12 +22,26 @@ router.get('/projects/:category', async (req, res) => {
         res.status(200).json(result.rows);
     } catch (err) {
         console.log(err);
-        res.status(500).json({
-            error: 'An error occurred while fetching competences'
-        });
+        res.status(500).json({ error: 'An error occurred while fetching projects' });
     }
 });
 
+// Route pour obtenir un projet par ID
+router.get('/projects/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await pool.query('SELECT * FROM project WHERE id = $1', [id]);
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: 'Project not found' });
+        }
+        res.status(200).json(result.rows[0]);
+    } catch (err) {
+        console.error('Error fetching project:', err);
+        res.status(500).json({ error: 'An error occurred while fetching the project' });
+    }
+});
+
+// Route pour créer un nouveau projet
 router.post('/projects', async (req, res) => {
     const { title, link, image, category } = req.body;
     try {
@@ -40,6 +56,7 @@ router.post('/projects', async (req, res) => {
     }
 });
 
+// Route pour mettre à jour un projet par ID
 router.put('/projects/:id', async (req, res) => {
     const { id } = req.params;
     const { title, link, image, category } = req.body;
@@ -58,7 +75,7 @@ router.put('/projects/:id', async (req, res) => {
     }
 });
 
-
+// Route pour supprimer un projet par ID
 router.delete('/projects/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -72,6 +89,5 @@ router.delete('/projects/:id', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while deleting the project' });
     }
 });
-
 
 export default router;

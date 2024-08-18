@@ -3,8 +3,7 @@ import pool from './db.js';
 
 var router = express.Router();
 
-
-/* GET users listing. */
+/* GET all users. */
 router.get('/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT id, email FROM users');
@@ -15,6 +14,22 @@ router.get('/users', async (req, res) => {
   }
 });
 
+/* GET user by ID. */
+router.get('/users/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query('SELECT id, email FROM users WHERE id = $1', [id]);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.status(200).json(result.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the user' });
+  }
+});
+
+/* POST create a new user. */
 router.post('/users', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -29,6 +44,7 @@ router.post('/users', async (req, res) => {
   }
 });
 
+/* PUT update a user by ID. */
 router.put('/users/:id', async (req, res) => {
   const { id } = req.params;
   const { email, password } = req.body;
@@ -47,6 +63,7 @@ router.put('/users/:id', async (req, res) => {
   }
 });
 
+/* DELETE a user by ID. */
 router.delete('/users/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -60,6 +77,5 @@ router.delete('/users/:id', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while deleting the user' });
   }
 });
-
 
 export default router;

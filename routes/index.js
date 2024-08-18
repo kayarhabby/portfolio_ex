@@ -20,4 +20,21 @@ router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', { title: 'Express' });
 });
 
+/* GET form page with action and table parameters */
+// Route pour rendre le formulaire
+router.get('/form', (req, res) => {
+  const action = req.query.action; // 'add' ou 'edit'
+  const table = req.query.table;   // 'projects', 'skills', 'bootcamps'
+  const id = req.query.id;         // ID pour 'edit'
+
+  // Passer les données nécessaires au template
+  res.render('form', {
+    title: action === 'edit' ? 'Edit Item' : 'Add Item',
+    formTitle: action === 'edit' ? 'Edit Item' : 'Add Item',
+    action: action,
+    table: table,
+    id: id
+  });
+});
+
 export default router;

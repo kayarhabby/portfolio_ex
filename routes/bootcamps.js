@@ -13,6 +13,20 @@ router.get('/bootcamps', async (req, res) => {
     }
 });
 
+router.get('/bootcamps/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await pool.query('SELECT * FROM bootcamp WHERE id = $1', [id]);
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: 'Bootcamp not found' });
+        }
+        res.status(200).json(result.rows[0]);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'An error occurred while fetching the bootcamp' });
+    }
+});
+
 router.post('/bootcamps', async (req, res) => {
     const { date, title, description, image, certification } = req.body;
     try {
@@ -26,7 +40,6 @@ router.post('/bootcamps', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while creating the bootcamp' });
     }
 });
-
 
 router.put('/bootcamps/:id', async (req, res) => {
     const { id } = req.params;
@@ -59,6 +72,5 @@ router.delete('/bootcamps/:id', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while deleting the bootcamp' });
     }
 });
-
 
 export default router;

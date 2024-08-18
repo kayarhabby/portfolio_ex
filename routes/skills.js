@@ -13,6 +13,7 @@ router.get('/skills', async (req, res) => {
     }
 });
 
+// Route pour récupérer des compétences par catégorie
 router.get('/skills/:category', async (req, res) => {
     const category = req.params.category;
     console.log(category);
@@ -24,6 +25,21 @@ router.get('/skills/:category', async (req, res) => {
         res.status(500).json({
             error: 'An error occurred while fetching skills'
         });
+    }
+});
+
+// Route pour récupérer une compétence par ID
+router.get('/skills/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await pool.query('SELECT * FROM skill WHERE id = $1', [id]);
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: 'Skill not found' });
+        }
+        res.status(200).json(result.rows[0]);
+    } catch (err) {
+        console.error('Error fetching skill:', err);
+        res.status(500).json({ error: 'An error occurred while fetching the skill' });
     }
 });
 
@@ -59,7 +75,6 @@ router.put('/skills/:id', async (req, res) => {
     }
 });
 
-
 router.delete('/skills/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -73,6 +88,5 @@ router.delete('/skills/:id', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while deleting the skill' });
     }
 });
-
 
 export default router;
