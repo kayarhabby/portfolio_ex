@@ -1,4 +1,8 @@
-
+// Format date function remains unchanged
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+}
 
 /**
  * fetchData - Fetches data from the server using the provided API endpoint.
@@ -29,7 +33,6 @@ function fetchData(apiEndpoint, callback) {
  */
 function populateTable(data, columns, tableBodyId) {
     const tableBody = document.getElementById(tableBodyId);
-    console.log("Table Body Element:", tableBody); // Débogage
     if (!tableBody) {
         console.error(`Element with ID ${tableBodyId} not found.`);
         return;
@@ -38,11 +41,15 @@ function populateTable(data, columns, tableBodyId) {
 
     data.forEach(item => {
         let row = '<tr>';
-        // Ajouter la cellule ID
+        // Add ID cell
         row += `<td>${item.id || 'N/A'}</td>`;
-        // Ajouter les autres cellules basées sur les colonnes
+        // Add other cells based on columns
         columns.forEach(col => {
-            row += `<td>${item[col.field] || 'N/A'}</td>`; // Fill row with data or 'N/A' if field is missing
+            let cellData = item[col.field] || 'N/A';
+            if (col.field === 'date' && cellData !== 'N/A') {
+                cellData = formatDate(cellData); // Format date field
+            }
+            row += `<td>${cellData}</td>`; // Fill row with data or 'N/A' if field is missing
         });
         row += `
             <td>
@@ -62,13 +69,12 @@ function populateTable(data, columns, tableBodyId) {
  */
 function setupTable(columns, tableHeaderId) {
     const tableHeader = document.getElementById(tableHeaderId);
-    console.log("Table Header Element:", tableHeader); // Débogage
     if (!tableHeader) {
         console.error(`Element with ID ${tableHeaderId} not found.`);
         return;
     }
     let headerRow = '<tr>';
-    // Ajouter l'en-tête ID
+    // Add ID header
     headerRow += '<th>ID</th>';
     columns.forEach(col => {
         headerRow += `<th>${col.label}</th>`; // Add header columns dynamically
@@ -82,8 +88,7 @@ function setupTable(columns, tableHeaderId) {
  * @param {Number} id - The ID of the item to be edited.
  */
 function editItem(id) {
-    console.log("Edit item with ID:", id);
-    // Implement the logic to edit an item (e.g., opening a modal with the item's details)
+    window.location.href = `/form?action=edit&id=${id}&table=${window.currentTable}`;
 }
 
 /**
@@ -91,8 +96,37 @@ function editItem(id) {
  * @param {Number} id - The ID of the item to be deleted.
  */
 function deleteItem(id) {
-    console.log("Delete item with ID:", id);
-    // Implement the logic to delete an item (e.g., sending a delete request to the server)
+    if (confirm('Are you sure you want to delete this item?')) {
+        fetch(`/api/${window.currentTable}/${id}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error deleting item: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(() => {
+                // Reload the table data after deletion
+                reloadTable();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+}
+
+/**
+ * reloadTable - Reloads the table data based on the current table name.
+ */
+function reloadTable() {
+    if (window.currentTable === 'projects') {
+        loadProjects();
+    } else if (window.currentTable === 'skills') {
+        loadSkills();
+    } else if (window.currentTable === 'bootcamps') {
+        loadBootcamp();
+    } else if (window.currentTable === 'users') {
+        loadUsers();
+    }
 }
 
 /**
@@ -110,6 +144,7 @@ function loadProjects() {
     fetchData('/api/projects', function(data) {
         populateTable(data, columns, "tableBody");
     });
+    window.currentTable = 'projects';
 }
 
 /**
@@ -126,6 +161,7 @@ function loadSkills() {
     fetchData('/api/skills', function(data) {
         populateTable(data, columns, "tableBody");
     });
+    window.currentTable = 'skills';
 }
 
 /**
@@ -133,7 +169,7 @@ function loadSkills() {
  */
 function loadBootcamp() {
     const columns = [
-        { label: 'Date', field: 'Date' },
+        { label: 'Date', field: 'date' },
         { label: 'Title', field: 'title' },
         { label: 'Description', field: 'description' },
         { label: 'Image', field: 'image' },
@@ -144,6 +180,23 @@ function loadBootcamp() {
     fetchData('/api/bootcamps', function(data) {
         populateTable(data, columns, "tableBody");
     });
+    window.currentTable = 'bootcamps';
+}
+
+/**
+ * loadUsers - Sets up and loads the users table.
+ */
+function loadUsers() {
+    const columns = [
+        { label: 'Email', field: 'email' },
+        { label: 'Password', field: 'password' }
+    ];
+
+    setupTable(columns, "tableHeader");
+    fetchData('/api/users', function(data) {
+        populateTable(data, columns, "tableBody");
+    });
+    window.currentTable = 'users';
 }
 
 // Main event listener to handle navigation and load the correct data
@@ -159,8 +212,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 loadSkills();
             } else if (category === 'bootcamps') {
                 loadBootcamp();
+            } else if (category === 'users') {
+                loadUsers();
             }
         });
+    });
+
+    // Add event listener for the 'Add new' button
+    document.getElementById('addNew').addEventListener('click', function() {
+        window.location.href = `/form?action=add&table=${window.currentTable}`;
     });
 
     // Load the projects by default on page load
