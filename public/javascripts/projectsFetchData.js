@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const category = event.currentTarget.dataset.category;
 
             // Détermine l'URL à utiliser pour la requête en fonction de la catégorie
-            let url = category === "projects" ? "/api/projects" : `/api/projects/${category}`;
+            let url = category === "projects" ? "/api/projects" : `/api/projects/category/${category}`;
 
             try {
                 // Effectue une requête GET pour récupérer les projets correspondants
