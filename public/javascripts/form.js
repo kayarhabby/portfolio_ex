@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search); // initialisation de paramètre
     const action = urlParams.get('action'); // 'add' or 'edit'
     const table = urlParams.get('table');   // 'projects', 'skills', 'bootcamps', 'users'
     const id = urlParams.get('id');         // Only for 'edit'
