@@ -14,7 +14,7 @@ router.get('/skills', async (req, res) => {
 });
 
 // Route pour récupérer des compétences par catégorie
-router.get('/skills/:category', async (req, res) => {
+router.get('/skills/category/:category', async (req, res) => {
     const category = req.params.category;
     console.log(category);
     try {
