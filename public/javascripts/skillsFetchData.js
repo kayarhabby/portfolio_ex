@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", async (event) => {
             event.preventDefault();
             const category = event.currentTarget.dataset.category;
-            let url = category === "skills" ? "/api/skills" : `/api/skills/${category}`;
+            let url = category === "skills" ? "/api/skills" : `/api/skills/category/${category}`;
 
             try {
                 const response = await fetch(url);
