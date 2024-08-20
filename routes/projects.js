@@ -15,7 +15,7 @@ router.get('/projects', async (req, res) => {
 });
 
 // Route pour obtenir les projets par catégorie
-router.get('/projects/:category', async (req, res) => {
+router.get('/projects/category/:category', async (req, res) => {
     const category = req.params.category;
     try {
         const result = await pool.query('SELECT title, link, image, category FROM project WHERE category = $1', [category]);
