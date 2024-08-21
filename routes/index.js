@@ -8,16 +8,12 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET formulaire page. */
-router.get('/formulaire', function(req, res, next) {
-  res.render('formulaire', { title: 'Express' });
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Express' });
 });
 
 router.get('/index', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
-
-router.get('/dashboard', function(req, res, next) {
-  res.render('dashboard', { title: 'Express' });
 });
 
 /* GET form page with action and table parameters */
