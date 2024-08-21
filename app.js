@@ -14,6 +14,7 @@ import projectsRouter from './routes/projects.js'; // Importation du routeur pou
 import skillsRouter from './routes/skills.js'; // Importation du routeur pour les compétences
 import usersRouter from './routes/users.js'; // Importation du routeur pour les utilisateurs
 import bootcampRouter from './routes/bootcamps.js'; // Importation du routeur pour les bootcamps
+import authRouter from './routes/auth.js'; // Importation du routeur pour l'authentification
 
 const app = express(); // Création de l'application Express
 
@@ -78,6 +79,7 @@ app.use('/api', projectsRouter); // Route pour les projets
 app.use('/api', skillsRouter); // Route pour les compétences
 app.use('/api', usersRouter); // Route pour les utilisateurs
 app.use('/api', bootcampRouter); // Route pour les bootcamps
+app.use('/api',authRouter); // Route pour l'authentification
 
 // Gestion des erreurs 404
 app.use((req, res, next) => {
