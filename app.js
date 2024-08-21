@@ -9,14 +9,15 @@ import i18nextMiddleware from 'i18next-http-middleware'; // Importation du middl
 import Memcached from 'memcached'; // Importation du client Memcached pour le caching
 import session from 'express-session'; // Importation pour la gestion des sessions
 import passport from 'passport'; // Importation de Passport pour l'authentification
-
 import pool from './routes/db.js'; // Importation du pool de connexions à la base de données
 import indexRouter from './routes/index.js'; // Importation du routeur principal
 import projectsRouter from './routes/projects.js'; // Importation du routeur pour les projets
 import skillsRouter from './routes/skills.js'; // Importation du routeur pour les compétences
 import usersRouter from './routes/users.js'; // Importation du routeur pour les utilisateurs
 import bootcampRouter from './routes/bootcamps.js'; // Importation du routeur pour les bootcamps
-import authRouter from './routes/auth.js'; // Importation du routeur pour l'authentification
+import authRouter from './routes/auth.js';
+import {Strategy as LocalStrategy} from "passport-local";
+import bcrypt from "bcrypt"; // Importation du routeur pour l'authentification
 
 const app = express(); // Création de l'application Express
 
@@ -67,6 +68,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
 // Middleware i18next pour Express
 app.use(i18nextMiddleware.handle(i18next)); // Intégration de i18next avec Express
 
@@ -107,6 +110,61 @@ app.use((err, req, res, next) => {
 
     res.status(err.status || 500); // Définir le code de statut de la réponse
     res.render('error'); // Rendu de la vue d'erreur
+});
+
+/// Configuration de la stratégie Passport.js
+// LocalStrategy : La stratégie LocalStrategy de Passport est configurée pour utiliser le champ email pour identifier
+// l'utilisateur. Elle compare ensuite le mot de passe fourni avec le mot de passe haché stocké dans la base de données.
+passport.use('local', new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+    console.log('Authenticating user with email:', email);
+    try {
+        const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+        console.log('Result from DB query:', result);
+        if (result.rows.length > 0) {
+            const user = result.rows[0];
+            console.log('User found:', user);
+            const isMatch = await bcrypt.compare(password, user.password);
+            console.log('Password match result:', isMatch);
+            if (isMatch) {
+                return done(null, user);
+            } else {
+                console.log('Password mismatch for email:', email);
+                return done(null, false, { message: 'Incorrect password.' });
+            }
+        } else {
+            console.log('No user found with email:', email);
+            return done(null, false, { message: 'No user with that email address.' });
+        }
+    } catch (err) {
+        console.error('Database query error:', err);
+        return done(err);
+    }
+}));
+
+// Sérialisation de l'utilisateur
+// serializeUser et deserializeUser : Ces fonctions sont utilisées pour gérer les sessions utilisateur. serializeUser
+// enregistre l'ID de l'utilisateur dans la session
+passport.serializeUser((user, done) => {
+    console.log('serialize User');
+    done(null, user.id);
+});
+
+// Désérialisation de l'utilisateur
+// deserializeUser récupère les informations utilisateur
+// à partir de la base de données à chaque requête.
+passport.deserializeUser(async (id, done) => {
+    console.log('deserialize User');
+    try {
+        const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+        console.log('result dans deserialize User: ', result);
+        if (result.rows.length > 0) {
+            done(null, result.rows[0]);
+        } else {
+            done(new Error('User not found'));
+        }
+    } catch (err) {
+        done(err);
+    }
 });
 
 // Fermeture du pool de connexions à la base de données lors de l'arrêt de l'application
