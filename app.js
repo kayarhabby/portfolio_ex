@@ -7,6 +7,8 @@ import i18next from 'i18next'; // Importation de la bibliothèque i18next pour l
 import Backend from 'i18next-node-fs-backend'; // Importation du backend pour charger les traductions depuis le système de fichiers
 import i18nextMiddleware from 'i18next-http-middleware'; // Importation du middleware pour i18next avec Express
 import Memcached from 'memcached'; // Importation du client Memcached pour le caching
+import session from 'express-session'; // Importation pour la gestion des sessions
+import passport from 'passport'; // Importation de Passport pour l'authentification
 
 import pool from './routes/db.js'; // Importation du pool de connexions à la base de données
 import indexRouter from './routes/index.js'; // Importation du routeur principal
@@ -35,23 +37,35 @@ i18next
         },
         cache: {
             enabled: false, // Activer le cache
-            // get: (lng, ns, cb) => {
-            //     const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
-            //     memcachedClient.get(key, (err, data) => {
-            //         if (err) return cb(err, null); // Gestion des erreurs
-            //         return cb(null, data ? JSON.parse(data) : null); // Récupération des données du cache
-            //     });
-            // },
-            // set: (lng, ns, data) => {
-            //     const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
-            //     memcachedClient.set(key, JSON.stringify(data), 24 * 60 * 60, (err) => {
-            //         if (err) console.error('Memcached set error:', err); // Gestion des erreurs
-            //     });
-            // }
-
-
+            get: (lng, ns, cb) => {
+                const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
+                memcachedClient.get(key, (err, data) => {
+                    if (err) return cb(err, null); // Gestion des erreurs
+                    return cb(null, data ? JSON.parse(data) : null); // Récupération des données du cache
+                });
+            },
+            set: (lng, ns, data) => {
+                const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
+                memcachedClient.set(key, JSON.stringify(data), 24 * 60 * 60, (err) => {
+                    if (err) console.error('Memcached set error:', err); // Gestion des erreurs
+                });
+            }
         }
     });
+
+// Sessions
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: false } // Définissez `secure: true` si vous utilisez HTTPS
+    })
+);
+
+// Initialisation de Passport.js
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Middleware i18next pour Express
 app.use(i18nextMiddleware.handle(i18next)); // Intégration de i18next avec Express
@@ -79,7 +93,7 @@ app.use('/api', projectsRouter); // Route pour les projets
 app.use('/api', skillsRouter); // Route pour les compétences
 app.use('/api', usersRouter); // Route pour les utilisateurs
 app.use('/api', bootcampRouter); // Route pour les bootcamps
-app.use('/api',authRouter); // Route pour l'authentification
+app.use('/api', authRouter); // Route pour l'authentification
 
 // Gestion des erreurs 404
 app.use((req, res, next) => {
