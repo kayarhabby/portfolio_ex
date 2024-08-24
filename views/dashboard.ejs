@@ -10,9 +10,22 @@
     <link rel="stylesheet" href="/stylesheets/responsive.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <style>
+        /* Masquer le contenu initialement */
+        #desktop-content {
+            display: none;
+        }
+        /* Afficher un message pour les mobiles/tablettes */
+        #mobile-message {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-<div class="appDashboard">
+<div class="appDashboard" id="desktop-content">
     <!-- include Header -->
     <%- include("../public/templates/navDashboard.ejs") %>
     <!-- end include -->
@@ -38,9 +51,26 @@
     <%- include("../public/templates/footer.ejs") %>
     <!-- end include -->
 </div>
-
+<div id="mobile-message">
+    <!-- Message pour les mobiles/tablettes -->
+    <h1>This site is only available on desktop devices.</h1>
+</div>
 <!-- Script imports -->
 <script src="/javascripts/navbar.js"></script>
 <script src="/javascripts/common.js"></script>
+<script>
+    //détection de la largeur de l'écran
+    if (window.innerWidth < 1024) {
+        //masquer le contenu pour les mobiles/tablettes
+        document.getElementById('desktop-content').style.display = 'none';
+        //afficher le message pour les mobiles/tablettes
+        document.getElementById('mobile-message').style.display = 'block';
+    } else {
+        //afficher le contenu pour les ordinateurs de bureau
+        document.getElementById('desktop-content').style.display = 'block';
+        //masquer le message pour les mobiles/tablettes
+        document.getElementById('mobile-message').style.display = 'none';
+    }
+</script>
 </body>
 </html>
