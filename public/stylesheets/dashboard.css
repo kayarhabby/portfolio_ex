@@ -3,11 +3,16 @@
     flex-direction: column;
     gap: 30px;
 }
+
 .dashboardItem {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: var(--max-width);
+}
+
+.dashboardItem p{
+    font-size: 24px;
 }
 
 .dashboardContainer {
@@ -16,7 +21,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-
+    height: 90vh;
 }
 
 .dashboardTab{
