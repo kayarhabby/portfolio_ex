@@ -1,35 +1,33 @@
 <!-- skills page start -->
 <article class="skills_container" id="skills">
-    <h2><%= t('skills', { ns: 'skills' }) %></h2>
-    <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" data-category="skills">
-                        <button class="btn">
-                            <%= t('all', { ns: 'skills' }) %>
-                        </button>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-category="language">
-                        <button class="btn">
-                            <%= t('languages', { ns: 'skills' }) %>
-                        </button>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-category="framework">
-                        <button class="btn">
-                            <%= t('framework', { ns: 'skills' }) %>
-                        </button>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="skills_img_container" id="skills_img_container">
-            <!-- Skills will be dynamically inserted here -->
-        </div>
-    </div>
+    <section class="skills_title_container">
+        <h2><%= t('skills', { ns: 'skills' }) %></h2>
+        <ul>
+            <li>
+                <a href="#" data-category="skills">
+                    <button class="btn">
+                        <%= t('all', { ns: 'skills' }) %>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-category="language">
+                    <button class="btn">
+                        <%= t('languages', { ns: 'skills' }) %>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-category="framework">
+                    <button class="btn">
+                        <%= t('framework', { ns: 'skills' }) %>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="skills_img_container" id="skills_img_container">
+        <!-- Skills will be dynamically inserted here -->
+    </section>
 </article>
 <!-- skills page end -->
