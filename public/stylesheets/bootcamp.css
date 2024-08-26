@@ -77,6 +77,10 @@
 
 /* Pour les écrans de 768px de large ou moins */
 @media (max-width: 767px) {
+    .bootcamp_container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
     .bootcamp_img_container {
         grid-template-columns: 1fr;
     }
@@ -93,6 +97,11 @@
 
 /* Pour les écrans entre 768px et 1024px de large */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .bootcamp_container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
     .bootcamp_img_container {
         grid-template-columns: repeat(2, 1fr);
     }
