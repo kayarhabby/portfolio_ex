@@ -4,6 +4,29 @@
     row-gap: 20px;
 }
 
+.skills_title_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills_title_container ul{
+    display: flex;
+    column-gap: 10px;
+    padding: 0;
+    margin : 0;
+}
+.skills_title_container h2{
+    margin : 0;
+}
+
+.skills_title_container ul li a{
+    color : black;
+}
+
+.skills_title_container nav ul li a:hover {
+    color: var(--primary-color);
+}
+
 .skills_img_container{
     display: grid;
     grid-template-rows: auto;
@@ -31,21 +54,4 @@
     width: 35%;
     height: 35%;
     object-fit: contain;
-}
-
-article#skills nav{
-    width: 100%;
-}
-article#skills nav ul{
-    display: flex;
-    column-gap: 10px;
-    padding: 0;
-}
-
-article#skills nav ul li a{
-    color : black;
-}
-
-article#skills nav ul li a:hover {
-    color: var(--primary-color);
 }
