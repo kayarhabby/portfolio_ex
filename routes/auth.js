@@ -4,6 +4,15 @@ import passport from 'passport';
 
 const router = express.Router();
 
+// Middleware pour vérifier l'authentification
+const ensureAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next(); // Utilisateur authentifié, passe à la route
+    } else {
+        res.redirect('/login'); // Utilisateur non authentifié, redirige vers la page de connexion
+    }
+};
+
 router.post('/login', (req, res, next) => {
     const { email, password } = req.body;
     console.log('Received credentials:', email, password); // Pour déboguer
@@ -37,13 +46,12 @@ router.get('/logout', (req, res) => {
 
 
 // Route pour accéder au tableau de bord
-router.get('/dashboard', (req, res, next) => {
-    if (req.isAuthenticated()) {
-        res.render('dashboard', { title: 'Express' });
-    } else {
-        res.redirect("/login");
-    }
+
+// Route protégée
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
+    res.render('dashboard', { title: 'Express' });
 });
+
 
 // Stratégie de base sans passport en utilisant juste bcrypt
 
