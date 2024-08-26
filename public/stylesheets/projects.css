@@ -6,22 +6,28 @@ article#projects {
 }
 
 /* Style pour la barre de navigation des projets */
-article#projects div.projects nav {
-    width: 100%;
+.projects_title_container{
+    display: flex;
+    justify-content: space-between;
 }
 
-article#projects div.projects nav ul {
+.projects_title_container ul {
     display: flex;
     column-gap: 10px;
     transition: all 0.4s;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
-article#projects div.projects nav ul li a {
+.projects_title_container h2 {
+    margin: 0;
+}
+
+.projects_title_container ul li a {
     color: black;
 }
 
-article#projects div.projects nav ul li a:hover {
+.projects_title_container ul li a:hover {
     color: #e74c3c;
 }
 
