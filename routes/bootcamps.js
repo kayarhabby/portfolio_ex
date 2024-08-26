@@ -17,6 +17,7 @@ router.get('/bootcamps/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const result = await pool.query('SELECT * FROM bootcamp WHERE id = $1', [id]);
+        console.log(result);
         if (result.rowCount === 0) {
             return res.status(404).json({ error: 'Bootcamp not found' });
         }
