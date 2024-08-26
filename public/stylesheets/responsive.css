@@ -127,9 +127,9 @@
     article#about{
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
+        /*margin-top: 50px;*/
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     article#about section{
@@ -158,8 +158,15 @@
     .skills_container{
         justify-content: center;
         align-items: center;
-        padding-right: 30px;
-        padding-left: 30px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .skills_title_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 10px;
     }
     .skills_img_container{
         grid-template-rows: repeat(2,1fr);
@@ -169,8 +176,8 @@
     article#education {
         justify-content: center;
         align-items: center;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     article#education section{
@@ -180,16 +187,25 @@
     article#projects {
         justify-content: center;
         align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .projects_title_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 5px;
     }
     article#projects section {
         grid-template-columns: 1fr;
     }
 
-    footer{
+    #contact{
         flex-direction: column;
         align-items: start;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 }
@@ -317,9 +333,9 @@
     article#about{
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
+        /*margin-top: 50px;*/
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     article#about section{
@@ -345,9 +361,17 @@
     .skills_container{
         justify-content: center;
         align-items: center;
-        padding-right: 30px;
-        padding-left: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
+
+    .skills_title_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 10px;
+    }
+
     .skills_img_container{
         grid-template-rows: repeat(2,1fr);
         grid-template-columns: repeat(2,1fr);
@@ -356,8 +380,8 @@
     article#education {
         justify-content: center;
         align-items: center;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     article#education section{
@@ -368,14 +392,23 @@
     article#projects {
         justify-content: center;
         align-items: center;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .projects_title_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 5px;
     }
 
     article#projects section {
         grid-template-columns: 1fr 1fr;
     }
 
-    footer{
-        padding-left: 30px;
-        padding-right: 30px;
+    #contact{
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
