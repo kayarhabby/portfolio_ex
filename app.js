@@ -58,16 +58,28 @@ i18next
 // Configuration de la session pour utiliser Memcached
 app.use(
     session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
+        secret: process.env.SESSION_SECRET, // Un secret pour signer le cookie de session
+        resave: false, // Évite de sauvegarder la session si elle n'est pas modifiée
+        saveUninitialized: false, // Évite de créer une session vide
         store: new (MemcachedStore(session))({
             hosts: ['localhost:11211'], // Adresse du serveur Memcached
             secret: process.env.SESSION_SECRET // Secret pour chiffrer les sessions dans Memcached
         }),
-        cookie: { secure: false } // Définissez `secure: true` si vous utilisez HTTPS
+        cookie: {
+            secure: false, // Utilisez `secure: true` si vous utilisez HTTPS
+            httpOnly: true, // Empêche l'accès au cookie via JavaScript côté client
+            maxAge: 24 * 60 * 60 * 1000 // Durée de vie du cookie en millisecondes (ici, 24 heures)
+        }
     })
 );
+
+app.use((req, res, next) => {
+    if (req.session) {
+        req.session.touch(); // Réinitialise la durée de vie du cookie
+    }
+    next();
+});
+
 
 // Initialisation de Passport.js
 app.use(passport.initialize());
@@ -145,21 +157,18 @@ passport.use('local', new LocalStrategy({ usernameField: 'email' }, async (email
 // Sérialisation de l'utilisateur
 passport.serializeUser((user, done) => {
     const sessionKey = `passport_user_${user.id}`;
-    console.log('serialize User', sessionKey);
-
     memcachedClient.set(sessionKey, JSON.stringify(user), 24 * 60 * 60, (err) => {
         if (err) {
             console.error('Memcached set error during serialize:', err);
-            return cb(err);
+            return done(err);
         }
-        done(null, sessionKey); // Stocke uniquement la clé dans la session
+        done(null, sessionKey); // Stocke la clé dans la session
     });
 });
 
+
 // Désérialisation de l'utilisateur
 passport.deserializeUser((sessionKey, done) => {
-    console.log('deserialize User', sessionKey);
-
     memcachedClient.get(sessionKey, (err, data) => {
         if (err) {
             console.error('Memcached get error during deserialize:', err);
@@ -171,6 +180,7 @@ passport.deserializeUser((sessionKey, done) => {
         done(null, JSON.parse(data)); // Récupère l'utilisateur depuis Memcached
     });
 });
+
 
 // Fermeture du pool de connexions à la base de données lors de l'arrêt de l'application
 process.on('SIGINT', () => {
