@@ -8,6 +8,7 @@ import Backend from 'i18next-node-fs-backend'; // Importation du backend pour ch
 import i18nextMiddleware from 'i18next-http-middleware'; // Importation du middleware pour i18next avec Express
 import Memcached from 'memcached'; // Importation du client Memcached pour le caching
 import session from 'express-session'; // Importation pour la gestion des sessions
+import MemcachedStore from 'connect-memcached'; // Importation du store Memcached pour les sessions
 import passport from 'passport'; // Importation de Passport pour l'authentification
 import pool from './routes/db.js'; // Importation du pool de connexions à la base de données
 import indexRouter from './routes/index.js'; // Importation du routeur principal
@@ -15,9 +16,9 @@ import projectsRouter from './routes/projects.js'; // Importation du routeur pou
 import skillsRouter from './routes/skills.js'; // Importation du routeur pour les compétences
 import usersRouter from './routes/users.js'; // Importation du routeur pour les utilisateurs
 import bootcampRouter from './routes/bootcamps.js'; // Importation du routeur pour les bootcamps
-import authRouter from './routes/auth.js';
-import {Strategy as LocalStrategy} from "passport-local";
-import bcrypt from "bcrypt"; // Importation du routeur pour l'authentification
+import authRouter from './routes/auth.js'; // Importation du routeur pour l'authentification
+import { Strategy as LocalStrategy } from "passport-local";
+import bcrypt from "bcrypt"; // Importation pour le chiffrement des mots de passe
 
 const app = express(); // Création de l'application Express
 
@@ -31,13 +32,13 @@ i18next
     .init({
         fallbackLng: 'en', // Langue de secours si la langue demandée n'est pas disponible
         preload: ['en', 'fr'], // Langues à précharger
-        ns: ['navbar', 'home', 'about', 'education', 'skills', 'projects', 'contact', 'footer'], // Espaces de noms pour les fichiers de traduction (ex: 'navbar' pour les traductions de la barre de navigation)
+        ns: ['navbar', 'home', 'about', 'education', 'skills', 'projects', 'contact', 'footer'], // Espaces de noms pour les fichiers de traduction
         defaultNS: 'navbar',
         backend: {
             loadPath: path.join(path.dirname(new URL(import.meta.url).pathname), '/public/locales/{{lng}}/{{ns}}.json') // Chemin vers les fichiers de traduction
         },
         cache: {
-            enabled: false, // Activer le cache
+            enabled: true, // Activer le cache
             get: (lng, ns, cb) => {
                 const key = `i18next_${lng}_${ns}`; // Génération de la clé pour le cache
                 memcachedClient.get(key, (err, data) => {
@@ -54,12 +55,16 @@ i18next
         }
     });
 
-// Sessions
+// Configuration de la session pour utiliser Memcached
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
+        store: new (MemcachedStore(session))({
+            hosts: ['localhost:11211'], // Adresse du serveur Memcached
+            secret: process.env.SESSION_SECRET // Secret pour chiffrer les sessions dans Memcached
+        }),
         cookie: { secure: false } // Définissez `secure: true` si vous utilisez HTTPS
     })
 );
@@ -67,8 +72,6 @@ app.use(
 // Initialisation de Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 // Middleware i18next pour Express
 app.use(i18nextMiddleware.handle(i18next)); // Intégration de i18next avec Express
@@ -112,9 +115,7 @@ app.use((err, req, res, next) => {
     res.render('error'); // Rendu de la vue d'erreur
 });
 
-/// Configuration de la stratégie Passport.js
-// LocalStrategy : La stratégie LocalStrategy de Passport est configurée pour utiliser le champ email pour identifier
-// l'utilisateur. Elle compare ensuite le mot de passe fourni avec le mot de passe haché stocké dans la base de données.
+// Configuration de la stratégie Passport.js
 passport.use('local', new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
     console.log('Authenticating user with email:', email);
     try {
@@ -142,29 +143,33 @@ passport.use('local', new LocalStrategy({ usernameField: 'email' }, async (email
 }));
 
 // Sérialisation de l'utilisateur
-// serializeUser et deserializeUser : Ces fonctions sont utilisées pour gérer les sessions utilisateur. serializeUser
-// enregistre l'ID de l'utilisateur dans la session
 passport.serializeUser((user, done) => {
-    console.log('serialize User');
-    done(null, user.id);
+    const sessionKey = `passport_user_${user.id}`;
+    console.log('serialize User', sessionKey);
+
+    memcachedClient.set(sessionKey, JSON.stringify(user), 24 * 60 * 60, (err) => {
+        if (err) {
+            console.error('Memcached set error during serialize:', err);
+            return cb(err);
+        }
+        done(null, sessionKey); // Stocke uniquement la clé dans la session
+    });
 });
 
 // Désérialisation de l'utilisateur
-// deserializeUser récupère les informations utilisateur
-// à partir de la base de données à chaque requête.
-passport.deserializeUser(async (id, done) => {
-    console.log('deserialize User');
-    try {
-        const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
-        console.log('result dans deserialize User: ', result);
-        if (result.rows.length > 0) {
-            done(null, result.rows[0]);
-        } else {
-            done(new Error('User not found'));
+passport.deserializeUser((sessionKey, done) => {
+    console.log('deserialize User', sessionKey);
+
+    memcachedClient.get(sessionKey, (err, data) => {
+        if (err) {
+            console.error('Memcached get error during deserialize:', err);
+            return done(err);
         }
-    } catch (err) {
-        done(err);
-    }
+        if (!data) {
+            return done(new Error('User not found in session.'));
+        }
+        done(null, JSON.parse(data)); // Récupère l'utilisateur depuis Memcached
+    });
 });
 
 // Fermeture du pool de connexions à la base de données lors de l'arrêt de l'application
