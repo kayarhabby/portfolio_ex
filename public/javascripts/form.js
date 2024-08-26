@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
             .then(response => response.json())
             .then(() => {
-                window.location.href = 'dashboard'; // Redirect back to dashboard
+                window.location.href = '/api/dashboard'; // Redirect back to dashboard
             })
             .catch(error => console.error('Error:', error));
     });
