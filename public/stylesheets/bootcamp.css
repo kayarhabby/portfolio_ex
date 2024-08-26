@@ -1,0 +1,113 @@
+/* Section "Bootcamp" */
+.bootcamp_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+    margin-bottom: var(--gap-large);
+}
+
+.bootcamp_img_container {
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-large);
+}
+
+.bootcamp_item_img {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.bootcamp_item_img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.bootcamp_item_img:hover img {
+    transform: scale(1.1);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.bootcamp_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-small);
+    text-align: justify;
+}
+
+.bootcamp_items_date {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+}
+
+.bootcamp_items_text {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-small);
+}
+
+.bootcamp_items_text h3 {
+    font-size: var(--font-size-medium);
+    margin: 0;
+}
+
+.bootcamp_items_text h3:hover {
+    color: var(--primary-color);
+}
+
+.readmoreContainer {
+    display: flex;
+    align-items: center;
+    column-gap: var(--gap-small);
+}
+
+.readmoreContainer a {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.readmoreContainer:hover {
+    cursor: pointer;
+}
+
+/* Pour les écrans de 768px de large ou moins */
+@media (max-width: 767px) {
+    .bootcamp_img_container {
+        grid-template-columns: 1fr;
+    }
+
+    .bootcamp_item_img {
+        position: static; /* Retirer position relative pour les petits écrans */
+    }
+
+    .bootcamp_item_img img {
+        transform: none; /* Désactiver la transformation de zoom */
+        box-shadow: none; /* Supprimer l'ombre portée */
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px de large */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .bootcamp_img_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bootcamp_item_img {
+        position: static; /* Retirer position relative pour les tablettes et mobiles */
+    }
+
+    .bootcamp_item_img img {
+        transform: none; /* Désactiver la transformation de zoom */
+        box-shadow: none; /* Supprimer l'ombre portée */
+    }
+
+    .bootcamp_container {
+        margin-right: var(--gap-small);
+        margin-left: var(--gap-small);
+    }
+}
