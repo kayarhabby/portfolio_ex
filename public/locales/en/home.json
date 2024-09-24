@@ -1,8 +1,11 @@
 {
-  "need_a": "Need a",
-  "creative_and_stable": "Creative and stable",
-  "web_solution": "Web solution",
-  "for_your_business": "for your business?",
-  "welcome_message": "Welcome to my web development portfolio",
+  "welcome_message": "Welcome to my portfolio!",
+  "intro_message": "I am passionate about computer science.",
+  "study_status": "I am currently in my second year of engineering studies in Information Systems and Technologies.",
+  "explore_message_part1": "Explore my",
+  "skills": "skills",
+  "explore_message_part2": "and",
+  "projects": "projects",
+  "explore_message_part3": "to learn more about my background and achievements.",
   "download_resume": "Download my resume"
 }
