@@ -41,12 +41,12 @@
     justify-content: center;
     align-items: center;
     gap : 20px;
-    box-shadow: 0px 3px 12px 0px #ccc;
+    box-shadow: 0 3px 12px 0 #ccc;
     border: 1px solid transparent;
 }
 
 .skills_content_image:hover{
-    background-color: var(--third-color);
+    background-color: var(--primary-color);
     color: white;
 }
 
