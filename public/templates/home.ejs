@@ -1,16 +1,18 @@
 <article id="home">
     <div class="homeContainer">
-        <div>
-            <h1>
-                <%= t('need_a', { ns: 'home' }) %>
-                <br>
-                <span class="h1__span-1"><%= t('creative_and_stable', { ns: 'home' }) %></span>
-                <br>
-                <span class="h1__span-2"><%= t('web_solution', { ns: 'home' }) %></span><br>
-                <%= t('for_your_business', { ns: 'home' }) %>
-            </h1>
+        <div class="homeTextContainer">
+            <h1><%= t('welcome_message', { ns: 'home' }) %></h1>
             <p>
-                <%= t('welcome_message', { ns: 'home' }) %>
+                <strong>Pascia Hershe</strong>, <%= t('intro_message', { ns: 'home' }) %>
+                <br>
+                <%= t('study_status', { ns: 'home' }) %>
+            </p>
+            <p>
+                <%= t('explore_message_part1', { ns: 'home' }) %>
+                <a href="#skills"><%= t('skills', { ns: 'home' }) %></a>,
+                <%= t('explore_message_part2', { ns: 'home' }) %>
+                <a href="#projects"><%= t('projects', { ns: 'home' }) %></a>
+                <%= t('explore_message_part3', { ns: 'home' }) %>
             </p>
             <div class="header__btn">
                 <a href="/documents/KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf" download="KAYA_RHABBY_Pascia_Hershe_cv_informatique.pdf">
@@ -22,7 +24,7 @@
             </div>
         </div>
         <div class="header_image">
-            <img src="/images/Rhabi_1.jpg" alt="header" />
+            <img src="/images/Rhabi_1-removebg-preview.png" alt="header" />
         </div>
     </div>
 </article>
