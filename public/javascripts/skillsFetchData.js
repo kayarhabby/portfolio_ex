@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("article#skills nav ul li a"); // links = ["skills", "languages", "framework", "devops_skills"]
+    const links = document.querySelectorAll("article#skills .skills_title_container ul li a"); // links = ["skills", "languages", "framework", "devops_skills"]
     const skillsImgContainer = document.getElementById("skills_img_container");
 
     links.forEach(link => {
