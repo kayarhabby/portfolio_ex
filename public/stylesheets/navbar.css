@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  --primary-color: #ff0147;
+  --primary-color: #16423C;
   --secondary-color: #212429;
-  --third-color: #5e17eb;
   --text-light: #d1d5db;
   --white: #ffffff;
   --black: #000000;
   --max-width: 1280px;
   --success-color: #23cc71;
-  --error-color: #e74c3c;
+  --error-color: red;
   --border-color: #718096;
 
   /* Effets */
@@ -55,9 +54,6 @@
 
   /* Tailles d'éléments spécifiques */
   --circle-diameter: 200px;
-
-  /* Header */
-  --header-height: 70vh;
 }
 
 * {
@@ -88,25 +84,19 @@ header {
   justify-content: center;
   align-items: center;
   transition: 0.6s;
-  padding: 20px;
-  background-color: var(--secondary-color);
-  position: sticky; /* Rend le header sticky */
-  top: 0;
-  z-index: 1000;
+  padding-top: 20px;
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 40px;
   width: 100%;
   max-width: var(--max-width);
 }
 
 header nav .logo a {
   font-weight: 600;
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
   font-size: 1.5rem;
   letter-spacing: 1px;
@@ -114,7 +104,7 @@ header nav .logo a {
 }
 
 header nav .logo a:hover {
-  color : var(--third-color);
+  color : var(--primary-color);
 }
 
 header nav ul {
@@ -132,7 +122,7 @@ header nav ul li {
 header nav ul li a {
   margin: 0 15px;
   text-decoration: none;
-  color: var(--white);
+  color: var(--black);
   letter-spacing: 1px;
   font-weight: 600;
   font-size: 1.2rem;
@@ -140,11 +130,11 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: var(--third-color);
+  color: var(--btn-bg-color);
 }
 
 header nav ul li a.active {
-  color: var(--primary-color); /* Surligne le lien actif en orange */
+  color: var(--btn-bg-color); /* Surligne le lien actif en orange */
 }
 
 .menu-hamburger {
@@ -161,6 +151,7 @@ header nav ul li a.active {
   font-size: 2em;
   margin: 0;
 }
+
 
 main {
   padding-top: 30px;
@@ -181,14 +172,13 @@ main {
   font-size: 1rem;
   color: var(--white);
   background-color: var(--primary-color);
-  border-radius: 5rem;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .btn:hover {
   color: var(--white);
-  background-color: #5B42F3;
+  background-color: var(--btn-bg-color);
 }
 
 .lang_and_button {
