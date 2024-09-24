@@ -162,7 +162,7 @@ main {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+  row-gap: 200px;
 }
 
 .btn {
