@@ -36,8 +36,7 @@
 
     header nav ul li:hover{
         width: 33vh;
-        background-color: blueviolet;
-        border-radius: 10px;
+        background-color: var(--btn-bg-color);
     }
 
     header nav ul li a:hover{
@@ -80,6 +79,9 @@
         margin-left: 0;
     }
 
+    article#home div ul {
+        padding: 30px 0 0 0;
+    }
 
     /*####################fin navbar#################################*/
 
@@ -93,25 +95,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
     }
 
     article#home > div h1 {
-        font-size: 2rem;
-        font-weight: 300;
-        line-height: 2rem;
-        text-shadow: 1px 2px #558abb;
-        text-align: center;
-    }
-
-    .h1__span-1 {
-        font-size: 2rem;
-    }
-    .h1__span-2 {
-        font-size: 2rem;
-    }
-    article#home div ul {
-        padding: 30px 0 0 0;
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 
     article#home img {
@@ -122,6 +110,15 @@
     article#home div.header_image{
         display: flex;
         justify-content: center;
+    }
+
+    .homeTextContainer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .headerContainer {
+        row-gap: 50px;
     }
 
     article#about{
@@ -150,9 +147,6 @@
 
     article#about section > div div.about_btn_container{
         gap : 5px;
-    }
-    article#about section > div div.about_btn_container button.btn.first{
-        display: none;
     }
 
     .skills_container{
@@ -247,7 +241,7 @@
 
     header nav ul li:hover{
         width: 33vh;
-        background-color: blueviolet;
+        background-color: var(--btn-bg-color);
         border-radius: 10px;
     }
 
@@ -304,18 +298,9 @@
 
     article#home > div h1 {
         font-size: 3rem;
-        font-weight: 300;
-        line-height: 3rem;
-        text-shadow: 2px 3px #558abb;
-        text-align: center;
+        font-weight: 400;
     }
 
-    .h1__span-1 {
-        font-size: 3rem;
-    }
-    .h1__span-2 {
-        font-size: 3rem;
-    }
     article#home div ul {
         padding: 30px 0 0 0;
     }
@@ -328,6 +313,15 @@
     article#home div.header_image{
         display: flex;
         justify-content: center;
+    }
+
+    .homeTextContainer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .headerContainer {
+        row-gap: 50px;
     }
 
     article#about{
