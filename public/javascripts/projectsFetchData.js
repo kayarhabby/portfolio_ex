@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Sélectionne tous les liens de la navigation dans la section des projets
-    const links = document.querySelectorAll("article#projects div.projects nav ul li a");
+    const links = document.querySelectorAll("article#projects .projects_title_container ul li a");
 
     // Sélectionne le conteneur où les images des projets seront affichées
     const projectsImgContainer = document.querySelector("section.gallerie_container");
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const imgLink = document.createElement("a");
             imgLink.href = project.link || "#"; // Lien vers le projet ou '#' si pas de lien
+            imgLink.target = "_blank"; // Ouvre le lien dans une nouvelle fenêtre
 
             const img = document.createElement("img");
             img.src = '/images/' + project.image; // Chemin de l'image du projet
