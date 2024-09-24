@@ -18,13 +18,16 @@
   <link rel="stylesheet" href="/stylesheets/responsive.css">
 </head>
 <body>
-<!--include Header-->
-<%- include("../public/templates/navbar.ejs") %>
-<!-- end include-->
 
-<!--include landing Page-->
-<%- include("../public/templates/home.ejs") %>
-<!-- end include-->
+<div class="headerContainer">
+  <!--include Header-->
+  <%- include("../public/templates/navbar.ejs") %>
+  <!-- end include-->
+
+  <!--include landing Page-->
+  <%- include("../public/templates/home.ejs") %>
+  <!-- end include-->
+</div>
 
 <main>
 <!-- include about page -->
@@ -63,7 +66,6 @@
 <script src="/javascripts/skillsFetchData.js"></script>
 <script src="/javascripts/projectsFetchData.js"></script>
 <script src="/javascripts/bootcampFetchData.js"></script>
-<script src="/javascripts/handleScrollSectionActive.js"></script>
 <script src="/javascripts/scrollEvent.js"></script>
 <script>
   function changeLanguage(select) {
