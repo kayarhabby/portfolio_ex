@@ -2,18 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "bin/www",
+      "src": "./bin/www",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/bin/www"
+      "dest": "./bin/www"
     },
     {
       "src": "/",
-      "dest": "/bin/www"
+      "dest": "./bin/www"
     }
   ],
   "env": {
