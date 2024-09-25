@@ -49,8 +49,8 @@
     }
   ],
   "env": {
-    "POSTGRES_URL" : "postgres://default:VEgKu8O3JLid@ep-winter-mountain-a4k1x5q7-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
-    "SESSION_SECRET" : "DASHBOARD_READ_WRITE_PAGES_TOP_SECRET_1990_!_@",
+    "POSTGRES_URL": "postgres://default:VEgKu8O3JLid@ep-winter-mountain-a4k1x5q7-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
+    "SESSION_SECRET": "DASHBOARD_READ_WRITE_PAGES_TOP_SECRET_1990_!_@",
     "NODE_ENV": "production"
   }
 }
