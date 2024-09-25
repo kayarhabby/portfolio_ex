@@ -8,6 +8,26 @@
   ],
   "routes": [
     {
+      "src": "/api/projects/(.*)",
+      "dest": "/api/projects"
+    },
+    {
+      "src": "/api/skills/(.*)",
+      "dest": "/api/skills"
+    },
+    {
+      "src": "/api/users/(.*)",
+      "dest": "/api/users"
+    },
+    {
+      "src": "/api/bootcamps/(.*)",
+      "dest": "/api/bootcamps"
+    },
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "/api/auth"
+    },
+    {
       "src": "/(.*)",
       "dest": "/"
     }
