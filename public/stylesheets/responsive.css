@@ -121,6 +121,10 @@
         row-gap: 50px;
     }
 
+    article#home .header_image::before {
+        display: none; /* Cache l'ombre et le fond jaune sur les petits écrans */
+    }
+
     article#about{
         justify-content: center;
         align-items: center;
@@ -321,7 +325,11 @@
     }
 
     .headerContainer {
-        row-gap: 50px;
+        row-gap: 200px;
+    }
+
+    article#home .header_image::before {
+        display: none; /* Cache l'ombre et le fond jaune sur les petits écrans */
     }
 
     article#about{
