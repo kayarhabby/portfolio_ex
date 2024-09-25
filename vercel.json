@@ -2,14 +2,50 @@
   "version": 2,
   "builds": [
     {
-      "src": "./bin/www",
+      "src": "bin/www",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "src": "/projects(/.*)?",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/skills(/.*)?",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/users(/.*)?",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/bootcamps(/.*)?",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/auth(/.*)?",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/form",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/login",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/index",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/dashboard",
+      "dest": "/bin/www"
+    },
+    {
+      "src": "/",
+      "dest": "/bin/www"
     }
   ]
 }
