@@ -37,15 +37,11 @@
     },
     {
       "src": "/index",
-      "dest": "/"
+      "dest": "./bin/www"
     },
     {
       "src": "/dashboard",
       "dest": "/api/dashboard"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
     }
   ],
   "env": {
