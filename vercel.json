@@ -47,5 +47,9 @@
       "src": "/",
       "dest": "/bin/www"
     }
-  ]
+  ],
+  "env": {
+    "POSTGRES_URL" : "postgres://default:VEgKu8O3JLid@ep-winter-mountain-a4k1x5q7-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+    "NODE_ENV": "production"
+  }
 }
