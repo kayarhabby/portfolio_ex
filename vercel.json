@@ -8,7 +8,27 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/projects(/.*)?",
+      "dest": "./bin/www"
+    },
+    {
+      "src": "/api/skills(/.*)?",
+      "dest": "./bin/www"
+    },
+    {
+      "src": "/api/users(/.*)?",
+      "dest": "./bin/www"
+    },
+    {
+      "src": "/api/bootcamps(/.*)?",
+      "dest": "./bin/www"
+    },
+    {
+      "src": "/api/auth(/.*)?",
+      "dest": "./bin/www"
+    },
+    {
+      "src": "/api/dashboard",
       "dest": "./bin/www"
     },
     {
