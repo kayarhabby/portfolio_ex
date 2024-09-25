@@ -9,23 +9,28 @@
   "routes": [
     {
       "src": "/projects(/.*)?",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/skills(/.*)?",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/users(/.*)?",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/bootcamps(/.*)?",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/auth(/.*)?",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/form",
@@ -33,19 +38,23 @@
     },
     {
       "src": "/login",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/index",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/dashboard",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/",
-      "dest": "/bin/www"
+      "dest": "/bin/www",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ],
   "env": {

@@ -7,6 +7,7 @@ import i18next from 'i18next'; // Importation de la bibliothèque i18next pour l
 import Backend from 'i18next-node-fs-backend'; // Importation du backend pour charger les traductions depuis le système de fichiers
 import i18nextMiddleware from 'i18next-http-middleware'; // Importation du middleware pour i18next avec Express
 import session from 'express-session'; // Importation pour la gestion des sessions
+import cors from "cors"; // Importation pour gérer les requêtes CORS
 // import pg from 'pg'; // Importation du client PostgreSQL
 import pgSession from 'connect-pg-simple'; // Importation du store PostgreSQL pour les sessions
 import passport from 'passport'; // Importation de Passport pour l'authentification
@@ -23,15 +24,15 @@ import authRouter from './routes/auth.js'; // Importation du routeur pour l'auth
 
 const app = express(); // Création de l'application Express
 
-// // Configuration de la base de données pour les sessions
-// const { Pool } = pg;
-// const sessionPool = new Pool({
-//     user: process.env.DB_USER, // Nom d'utilisateur PostgreSQL
-//     host: process.env.DB_HOST, // Adresse du serveur PostgreSQL
-//     database: process.env.DB_NAME, // Nom de la base de données
-//     password: process.env.DB_PASSWORD, // Mot de passe de l'utilisateur
-//     port: process.env.DB_PORT, // Port PostgreSQL (par défaut 5432)
-// });
+// Middleware pour gérer les requêtes CORS
+const corsConfig = {
+    origin: "*",
+    credential : true,
+    methods: ["GET,POST,PUT,DELETE"],
+}
+
+app.options("*", cors(corsConfig));
+app.use(cors(corsConfig));
 
 // Utilisation de connect-pg-simple pour gérer les sessions avec PostgreSQL
 const PgSession = pgSession(session);
