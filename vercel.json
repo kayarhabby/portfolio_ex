@@ -2,39 +2,54 @@
   "version": 2,
   "builds": [
     {
-      "src": "./bin/www",
+      "src": "bin/www",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/projects/(.*)",
+      "src": "/projects(/.*)?",
       "dest": "/api/projects"
     },
     {
-      "src": "/api/skills/(.*)",
+      "src": "/skills(/.*)?",
       "dest": "/api/skills"
     },
     {
-      "src": "/api/users/(.*)",
+      "src": "/users(/.*)?",
       "dest": "/api/users"
     },
     {
-      "src": "/api/bootcamps/(.*)",
+      "src": "/bootcamps(/.*)?",
       "dest": "/api/bootcamps"
     },
     {
-      "src": "/api/auth/(.*)",
+      "src": "/auth(/.*)?",
       "dest": "/api/auth"
     },
     {
-      "src": "/(.*)",
+      "src": "/form",
       "dest": "/"
+    },
+    {
+      "src": "/login",
+      "dest": "/"
+    },
+    {
+      "src": "/index",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard",
+      "dest": "/api/dashboard"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/bin/www"
     }
   ],
   "env": {
-    "POSTGRES_URL": "postgres://default:VEgKu8O3JLid@ep-winter-mountain-a4k1x5q7-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
-    "SESSION_SECRET": "DASHBOARD_READ_WRITE_PAGES_TOP_SECRET_1990_!_@",
+    "POSTGRES_URL" : "postgres://default:VEgKu8O3JLid@ep-winter-mountain-a4k1x5q7-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
     "NODE_ENV": "production"
   }
 }
