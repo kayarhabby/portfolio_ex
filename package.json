@@ -9,6 +9,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "connect-memcached": "^2.0.0",
+    "connect-pg-simple": "^10.0.0",
     "cookie-parser": "~1.4.4",
     "date-fns": "^3.6.0",
     "debug": "~2.6.9",
@@ -26,6 +27,7 @@
     "moment": "^2.30.1",
     "morgan": "~1.9.1",
     "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "pg": "^8.13.0"
   }
 }
