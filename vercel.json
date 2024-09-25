@@ -42,6 +42,10 @@
     {
       "src": "/dashboard",
       "dest": "/api/dashboard"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/(.*)"
     }
   ],
   "env": {
