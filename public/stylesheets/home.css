@@ -36,6 +36,32 @@ article#home > div p {
     color: var(--black);
 }
 
-article#home img {
+article#home .header_image {
+    position: relative; /* Nécessaire pour que ::before fonctionne */
+    display: inline-block;
     width: 100%;
 }
+
+article#home .header_image::before {
+    content: '';
+    position: absolute;
+    top: 20px;  /* Décalage vertical pour l'effet d'ombre */
+    left: 20px; /* Décalage horizontal pour l'effet d'ombre */
+    width: 100%;
+    height: 100%;
+    background-color: #e35a28; /* Couleur de fond */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Ombre pour le fond */
+    border-radius: 8px; /* Bordures arrondies */
+}
+
+article#home .header_image img {
+    display: block;
+    width: 100%;
+    position: relative;  /* Assure que l'image est au-dessus de ::before */
+    border-radius: 8px; /* Bordures arrondies pour l'image */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre autour de l'image */
+}
+
+
+
+
