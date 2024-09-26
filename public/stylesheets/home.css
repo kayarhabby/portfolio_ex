@@ -62,6 +62,8 @@ article#home .header_image img {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre autour de l'image */
 }
 
-
+.highlight {
+    color: #e35a28;
+}
 
 
