@@ -8,44 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/projects(/.*)?",
-      "dest": "/api/projects"
-    },
-    {
-      "src": "/skills(/.*)?",
-      "dest": "/api/skills"
-    },
-    {
-      "src": "/users(/.*)?",
-      "dest": "/api/users"
-    },
-    {
-      "src": "/bootcamps(/.*)?",
-      "dest": "/api/bootcamps"
-    },
-    {
-      "src": "/auth(/.*)?",
-      "dest": "/api/auth"
-    },
-    {
-      "src": "/form",
-      "dest": "/"
-    },
-    {
-      "src": "/login",
-      "dest": "/"
-    },
-    {
-      "src": "/index",
-      "dest": "/"
-    },
-    {
-      "src": "/dashboard",
-      "dest": "/api/dashboard"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/routes"
+      "dest": "bin/www"
     }
   ],
   "env": {
