@@ -20,7 +20,7 @@ article#home div.homeContainer{
 .homeTextContainer {
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
+    justify-content: center;
     row-gap: 10px;
 }
 

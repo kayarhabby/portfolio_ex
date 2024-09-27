@@ -1,11 +1,6 @@
 {
-  "welcome_message": "Bienvenue sur mon portfolio !",
-  "intro_message": "Je suis passionné par l'informatique.",
-  "study_status": "Je suis actuellement en 2ème année du cycle ingénieur en Systèmes et Technologies de l'Information.",
-  "explore_message_part1": "Explorez mes",
-  "skills": "compétences",
-  "explore_message_part2": "et",
-  "projects": "projets",
-  "explore_message_part3": "pour en savoir plus sur mon parcours et mes réalisations.",
+  "welcome_message": "Bonjour, je suis Pascia Hershe.",
+  "intro_message": "Actuellement en 2ème année du cycle ingénieur en Systèmes et Technologies de l'Information, je suis passionné par l'informatique et les innovations technologiques. Mon parcours académique et mes projets personnels témoignent de mon engagement envers l'excellence dans ce domaine dynamique.",
+  "explore_message": "Je vous invite à explorer mes compétences et projets afin de mieux comprendre mon parcours, mes réalisations et mes aspirations professionnelles. Ensemble, nous pouvons découvrir les multiples facettes de la technologie et envisager des collaborations enrichissantes.",
   "download_resume": "Télécharger mon CV"
 }

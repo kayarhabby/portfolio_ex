@@ -1,11 +1,7 @@
 {
-  "welcome_message": "Welcome to my portfolio!",
-  "intro_message": "I am passionate about computer science.",
-  "study_status": "I am currently in my second year of engineering studies in Information Systems and Technologies.",
-  "explore_message_part1": "Explore my",
-  "skills": "skills",
-  "explore_message_part2": "and",
-  "projects": "projects",
-  "explore_message_part3": "to learn more about my background and achievements.",
+  "welcome_message": "Hello, I am Pascia Hershe.",
+  "intro_message": "Currently in my second year of the engineering cycle in Systems and Information Technology, I am passionate about computer science and technological innovations. My academic journey and personal projects reflect my commitment to excellence in this dynamic field.",
+
+  "explore_message": "I invite you to explore my skills and projects to gain a deeper understanding of my background, accomplishments, and professional aspirations. Together, we can discover the many facets of technology and consider enriching collaborations.",
   "download_resume": "Download my resume"
 }
