@@ -101,8 +101,8 @@
     article#home div.homeContainer > div:not(.header_image) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /*justify-content: center;*/
+        /*align-items: center;*/
     }
 
     article#home > div h1 {
@@ -297,8 +297,8 @@
     article#home div.homeContainer > div:not(.header_image) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /*justify-content: center;*/
+        /*align-items: center;*/
     }
 
     article#home > div h1 {
@@ -322,7 +322,6 @@
     article#about{
         justify-content: center;
         align-items: center;
-        /*margin-top: 50px;*/
         padding-left: 20px;
         padding-right: 20px;
     }

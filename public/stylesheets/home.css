@@ -4,6 +4,12 @@ article#home {
     align-items: center;
 }
 
+article#home div.homeContainer {
+    display: grid;
+    place-items: center; /* Centre à la fois horizontalement et verticalement */
+    min-height: 100vh; /* S'assure que l'élément prend au moins la hauteur de la fenêtre */
+}
+
 article#home div.homeContainer{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -14,14 +20,13 @@ article#home div.homeContainer{
 .homeTextContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     row-gap: 10px;
 }
 
 .headerContainer {
     display: flex;
     flex-direction: column;
-    /*row-gap: 200px;*/
     background-color: #E9EFEC;
     height: 100vh;
 }
