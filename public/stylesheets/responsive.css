@@ -12,7 +12,7 @@
         position: absolute;
         background-color: #ffffff;
         width: 85%;
-        height: 60vh;
+        height: 100vh;
         flex-direction: column;
         justify-content: start;
         align-items: start;
@@ -90,6 +90,14 @@
         grid-template-columns: 1fr;
         column-gap: 20px;
     }
+
+    article#home div.homeContainer {
+        display: grid;
+        place-items: center; /* Centre à la fois horizontalement et verticalement */
+        min-height: 100vh; /* S'assure que l'élément prend au moins la hauteur de la fenêtre */
+    }
+
+
     article#home div.homeContainer > div:not(.header_image) {
         display: flex;
         flex-direction: column;
@@ -102,14 +110,8 @@
         font-weight: 400;
     }
 
-    article#home img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    article#home div.header_image{
-        display: flex;
-        justify-content: center;
+    article#home .header_image {
+        display: none; /* Cache complètement l'image */
     }
 
     .homeTextContainer {
@@ -117,18 +119,9 @@
         padding-right: 20px;
     }
 
-    .headerContainer {
-        row-gap: 50px;
-    }
-
-    article#home .header_image::before {
-        display: none; /* Cache l'ombre et le fond jaune sur les petits écrans */
-    }
-
     article#about{
         justify-content: center;
         align-items: center;
-        /*margin-top: 50px;*/
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -293,6 +286,14 @@
         grid-template-columns: 1fr;
         column-gap: 20px;
     }
+
+    article#home div.homeContainer {
+        display: grid;
+        place-items: center; /* Centre à la fois horizontalement et verticalement */
+        min-height: 100vh; /* S'assure que l'élément prend au moins la hauteur de la fenêtre */
+    }
+
+
     article#home div.homeContainer > div:not(.header_image) {
         display: flex;
         flex-direction: column;
@@ -308,28 +309,14 @@
     article#home div ul {
         padding: 30px 0 0 0;
     }
-
-    article#home img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    article#home div.header_image{
-        display: flex;
-        justify-content: center;
-    }
-
     .homeTextContainer {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    .headerContainer {
-        row-gap: 200px;
-    }
 
-    article#home .header_image::before {
-        display: none; /* Cache l'ombre et le fond jaune sur les petits écrans */
+    article#home .header_image {
+        display: none; /* Cache complètement l'image */
     }
 
     article#about{
