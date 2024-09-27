@@ -62,7 +62,7 @@ i18next
     .init({
         fallbackLng: 'en', // Langue de secours si la langue demandée n'est pas disponible
         preload: ['en', 'fr'], // Langues à précharger
-        ns: ['navbar', 'home', 'about', 'education', 'skills', 'projects', 'contact', 'footer'], // Espaces de noms pour les fichiers de traduction
+        ns: ['navbar', 'home', 'about', 'education', 'skills', 'projects', 'contact', 'footer', 'bootcamp'], // Espaces de noms pour les fichiers de traduction
         defaultNS: 'navbar',
         backend: {
             loadPath: path.join(path.dirname(new URL(import.meta.url).pathname), '/public/locales/{{lng}}/{{ns}}.json') // Chemin vers les fichiers de traduction
