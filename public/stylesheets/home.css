@@ -21,7 +21,7 @@ article#home div.homeContainer{
 .headerContainer {
     display: flex;
     flex-direction: column;
-    row-gap: 200px;
+    /*row-gap: 200px;*/
     background-color: #E9EFEC;
     height: 100vh;
 }
