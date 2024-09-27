@@ -1,6 +1,9 @@
 {
   "about_title": "About",
-  "about_text": "I am KAYA RHABBY Pascia Hershe, an engineering student specializing in systems and information technology at Polytech Nancy. Originally from Congo, I obtained a scientific baccalaureate before continuing my studies in computer science at the University of Strasbourg, where I earned a DEUG. Passionate about computing, I have acquired solid skills in Python, Java, C/C++, JavaScript. In parallel, I self-train via platforms like Udemy, with certifications in web development, cloud computing, and networks. Outside of my studies, I am passionate about basketball and Latin dance. These activities help me develop essential qualities such as teamwork and discipline. My goal is to specialize in software development and cloud engineering, with a strong interest in DevOps.",
+  "about_text_part1":"I am KAYA RHABBY Pascia Hershe, an engineering student specializing in Systems and Information Technology at Polytech Nancy. Originally from the Congo, I earned a scientific baccalaureate before pursuing my studies in computer science at the University of Strasbourg, where I obtained a DEUG (Diploma of General University Studies).",
+  "about_text_part2":"With a deep passion for information technology, I have developed strong skills in Python, Java, C/C++, and JavaScript. Alongside my formal education, I continuously enhance my knowledge through self-learning platforms such as Udemy, earning certifications in web development, cloud computing, and networking.",
+  "about_text_part3":"Beyond academics, I have a keen interest in basketball and Latin dance, which have helped me foster important qualities like teamwork and discipline.",
+  "about_text_part4":"My professional ambition is to specialize in software development and cloud engineering, with a strong focus on DevOps practices.",
   "take_a_look_btn": "Take a look at my skills",
   "lets_talk_btn": "Let's Talk"
 }

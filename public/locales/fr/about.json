@@ -1,6 +1,9 @@
 {
   "about_title": "À propos",
-  "about_text": "Je suis KAYA RHABBY Pascia Hershe, étudiant en ingénierie spécialisé en systèmes et technologies de l'information à Polytech Nancy. Originaire du Congo, j'ai obtenu un baccalauréat scientifique avant de poursuivre mes études en informatique à l'Université de Strasbourg, où j'ai décroché un DEUG. Passionné par l'informatique, j'ai acquis des compétences solides en Python, Java, C/C++, JavaScript. En parallèle, je m'autoforme via des plateformes comme Udemy, avec des certifications en développement web, cloud computing, et réseaux. En dehors de mes études, je suis un passionné de basket-ball et de danse latine. Ces activités me permettent de développer des qualités essentielles telles que l'esprit d'équipe et la discipline. Mon objectif est de me spécialiser dans le développement logiciel et l'ingénierie cloud, avec un intérêt marqué pour le DevOps.",
+  "about_text_part1": "Je me présente, KAYA RHABBY Pascia Hershe, étudiant en cycle ingénieur spécialisé en Systèmes et Technologies de l'Information à Polytech Nancy. Originaire du Congo, j'ai obtenu un baccalauréat scientifique avant de poursuivre mes études en informatique à l'Université de Strasbourg, où j'ai décroché un DEUG (Diplôme d'Études Universitaires Générales).",
+  "about_text_part2": "Fortement passionné par les technologies de l'information, j'ai développé une expertise solide en Python, Java, C/C++ et JavaScript. Parallèlement à mon cursus académique, je continue à me perfectionner de manière autonome via des plateformes reconnues comme Udemy, obtenant ainsi des certifications en développement web, cloud computing, et réseaux.",
+  "about_text_part3": "En dehors de mon parcours académique, je nourris un intérêt particulier pour le basket-ball et la danse latine, des activités qui m'ont permis de cultiver des valeurs telles que l'esprit d'équipe et la discipline.",
+  "about_text_part4": "Mon objectif professionnel est de me spécialiser dans le développement logiciel et l'ingénierie cloud, avec un intérêt marqué pour les méthodologies DevOps.",
   "take_a_look_btn": "Découvrez mes compétences",
   "lets_talk_btn": "Parlons-en"
 }
